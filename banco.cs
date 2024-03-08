@@ -31,7 +31,7 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string selecionar = "SELECT * FROM tblfuncionario ORDER BY nomeFuncionario;";
+                string selecionar = "SELECT * FROM tblfuncionario ORDER BY nomeFuncionario AND statusFuncionario = 'ATIVO';";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -165,7 +165,7 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string alterar = "UPDATE tblfuncionario SET statusFuncionario=@status WHERE idFuncionario=@codigo;";
+                string alterar = "UPDATE tblfuncionario SET statusFuncionario= 'DESATIVADO' WHERE idFuncionario=@codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codFuncionario);

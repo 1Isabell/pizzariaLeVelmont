@@ -87,7 +87,7 @@
             this.cbStatusDesativo.AutoSize = true;
             this.cbStatusDesativo.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatusDesativo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.cbStatusDesativo.Location = new System.Drawing.Point(1049, 76);
+            this.cbStatusDesativo.Location = new System.Drawing.Point(1029, 75);
             this.cbStatusDesativo.Name = "cbStatusDesativo";
             this.cbStatusDesativo.Size = new System.Drawing.Size(134, 34);
             this.cbStatusDesativo.TabIndex = 54;
@@ -100,7 +100,7 @@
             this.cbStatusAtivo.AutoSize = true;
             this.cbStatusAtivo.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatusAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.cbStatusAtivo.Location = new System.Drawing.Point(935, 76);
+            this.cbStatusAtivo.Location = new System.Drawing.Point(885, 75);
             this.cbStatusAtivo.Name = "cbStatusAtivo";
             this.cbStatusAtivo.Size = new System.Drawing.Size(91, 34);
             this.cbStatusAtivo.TabIndex = 53;
@@ -126,9 +126,9 @@
             this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(108)))), ((int)(((byte)(97)))));
             this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblStatus.Location = new System.Drawing.Point(833, 72);
+            this.lblStatus.Location = new System.Drawing.Point(729, 72);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(361, 42);
+            this.lblStatus.Size = new System.Drawing.Size(465, 42);
             this.lblStatus.TabIndex = 49;
             this.lblStatus.Text = "Status:";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -142,7 +142,7 @@
             this.txtNome.Location = new System.Drawing.Point(106, 77);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(427, 32);
+            this.txtNome.Size = new System.Drawing.Size(505, 32);
             this.txtNome.TabIndex = 45;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
@@ -153,7 +153,7 @@
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
             this.lblNome.Location = new System.Drawing.Point(25, 72);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(511, 42);
+            this.lblNome.Size = new System.Drawing.Size(664, 42);
             this.lblNome.TabIndex = 46;
             this.lblNome.Text = "Nome:";
             this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,7 +212,7 @@
             this.dgvFuncionario.AllowUserToDeleteRows = false;
             this.dgvFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.dgvFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
