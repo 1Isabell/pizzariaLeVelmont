@@ -61,11 +61,11 @@
             // 
             this.lblNome.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblNome.Location = new System.Drawing.Point(222, 15);
+            this.lblNome.Location = new System.Drawing.Point(130, 13);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(88, 32);
+            this.lblNome.Size = new System.Drawing.Size(157, 32);
             this.lblNome.TabIndex = 1;
-            this.lblNome.Text = "Nome:";
+            this.lblNome.Text = "Nome teste:";
             this.lblNome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNome
@@ -74,9 +74,9 @@
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtNome.Location = new System.Drawing.Point(298, 159);
+            this.txtNome.Location = new System.Drawing.Point(135, 48);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(646, 24);
+            this.txtNome.Size = new System.Drawing.Size(867, 24);
             this.txtNome.TabIndex = 0;
             // 
             // lblDataNasc
@@ -160,7 +160,7 @@
             // 
             this.lblEmail.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblEmail.Location = new System.Drawing.Point(228, 111);
+            this.lblEmail.Location = new System.Drawing.Point(130, 111);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(157, 32);
             this.lblEmail.TabIndex = 62;
@@ -173,9 +173,9 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtEmail.Location = new System.Drawing.Point(298, 255);
+            this.txtEmail.Location = new System.Drawing.Point(135, 146);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(650, 24);
+            this.txtEmail.Size = new System.Drawing.Size(867, 24);
             this.txtEmail.TabIndex = 63;
             // 
             // cmbNivel
@@ -267,9 +267,7 @@
             this.pnlFuncionario.Controls.Add(this.mtbDataNasc);
             this.pnlFuncionario.Controls.Add(this.cmbFuncao);
             this.pnlFuncionario.Controls.Add(this.cmbNivel);
-            this.pnlFuncionario.Controls.Add(this.txtEmail);
             this.pnlFuncionario.Controls.Add(this.txtCPF);
-            this.pnlFuncionario.Controls.Add(this.txtNome);
             this.pnlFuncionario.Controls.Add(this.pnlCadastro);
             this.pnlFuncionario.Location = new System.Drawing.Point(5, 5);
             this.pnlFuncionario.Name = "pnlFuncionario";
@@ -359,6 +357,8 @@
             this.pnlCadastro.Controls.Add(this.lblDataNasc);
             this.pnlCadastro.Controls.Add(this.lblTelefone);
             this.pnlCadastro.Controls.Add(this.lblNome);
+            this.pnlCadastro.Controls.Add(this.txtNome);
+            this.pnlCadastro.Controls.Add(this.txtEmail);
             this.pnlCadastro.Location = new System.Drawing.Point(72, 109);
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(1091, 403);
@@ -380,6 +380,7 @@
             this.pnlFuncionario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
             this.pnlCadastro.ResumeLayout(false);
+            this.pnlCadastro.PerformLayout();
             this.ResumeLayout(false);
 
         }
