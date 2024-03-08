@@ -47,6 +47,10 @@ namespace pizzariaLeVelmont
             Hide();
         }
 
-        
+        private void btnPagamento_Click(object sender, EventArgs e)
+        {
+            new frmPagamentoListar().Show();
+            Hide();
+        }
     }
 }

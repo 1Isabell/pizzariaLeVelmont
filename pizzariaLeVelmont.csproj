@@ -110,6 +110,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="formulario-Cadastrar-Pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario-Cadastrar-Pagamento.Designer.cs">
+      <DependentUpon>formulario-Cadastrar-Pagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario-pagamento-listar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario-pagamento-listar.Designer.cs">
+      <DependentUpon>formulario-pagamento-listar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionario-Listar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
     <Compile Include="variaveis.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario-Cadastrar-Pagamento.resx">
+      <DependentUpon>formulario-Cadastrar-Pagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario-pagamento-listar.resx">
+      <DependentUpon>formulario-pagamento-listar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionario-Listar.resx">
       <DependentUpon>Funcionario-Listar.cs</DependentUpon>

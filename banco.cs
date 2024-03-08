@@ -253,7 +253,7 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string alterar = "UPDATE tblfuncionario SET nomeFuncionario=@nomedataNascFuncionario=@dataNas,cpfFuncionario=@cpf,turnoFuncionario=@turno,emailFuncionario=@email,funcaoFuncionario=@funcao,acessoFuncionario=@nivel,telefoneFuncionario=@telefone,statusFuncionario=@status,WHERE idFuncionario=@codigo;";
+                string alterar = "UPDATE tblfuncionario SET nomeFuncionario=@nome,dataNascFuncionario=@dataNas,cpfFuncionario=@cpf,turnoFuncionario=@turno,emailFuncionario=@email,funcaoFuncionario=@funcao,acessoFuncionario=@nivel,telefoneFuncionario=@telefone,statusFuncionario=@status WHERE idFuncionario=@codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
                 //parametros
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);

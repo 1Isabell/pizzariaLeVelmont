@@ -106,7 +106,7 @@ namespace pizzariaLeVelmont
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             variaveis.funcao = "ALTERAR";
-            new Funcionario_Listar().Show();
+            new Funcionario_Cadastrar().Show();
             Hide();
         } //Alterar
 
