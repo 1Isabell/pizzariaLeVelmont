@@ -229,6 +229,7 @@ namespace pizzariaLeVelmont
                 cmd.Parameters.AddWithValue("@funcao", variaveis.funcaoFuncionario);
                 cmd.Parameters.AddWithValue("@nivel", variaveis.nivelFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
+                
 
 
                 //cmd parametros
@@ -265,6 +266,7 @@ namespace pizzariaLeVelmont
                 cmd.Parameters.AddWithValue("@funcao", variaveis.funcaoFuncionario);
                 cmd.Parameters.AddWithValue("@nivel", variaveis.nivelFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codFuncionario);
 
                 //cmd parametros
 

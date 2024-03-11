@@ -48,10 +48,10 @@
             this.pnlFuncionario = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.pnlFuncionario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
             this.pnlCadastro.SuspendLayout();
@@ -248,7 +248,7 @@
             this.mkbTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mkbTelefone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbTelefone.Location = new System.Drawing.Point(655, 201);
-            this.mkbTelefone.Mask = "(99) 00000-0000";
+            this.mkbTelefone.Mask = " 00000-0000";
             this.mkbTelefone.Name = "mkbTelefone";
             this.mkbTelefone.Size = new System.Drawing.Size(272, 31);
             this.mkbTelefone.TabIndex = 77;
@@ -298,20 +298,6 @@
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // cmbTurno
-            // 
-            this.cmbTurno.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.ItemHeight = 23;
-            this.cmbTurno.Items.AddRange(new object[] {
-            "Noite",
-            "Madrugada",
-            "Noite/Madrugada"});
-            this.cmbTurno.Location = new System.Drawing.Point(85, 299);
-            this.cmbTurno.Name = "cmbTurno";
-            this.cmbTurno.Size = new System.Drawing.Size(187, 31);
-            this.cmbTurno.TabIndex = 80;
             // 
             // pctSair
             // 
@@ -363,6 +349,20 @@
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(1091, 403);
             this.pnlCadastro.TabIndex = 11;
+            // 
+            // cmbTurno
+            // 
+            this.cmbTurno.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTurno.FormattingEnabled = true;
+            this.cmbTurno.ItemHeight = 23;
+            this.cmbTurno.Items.AddRange(new object[] {
+            "Noite",
+            "Madrugada",
+            "Noite/Madrugada"});
+            this.cmbTurno.Location = new System.Drawing.Point(85, 299);
+            this.cmbTurno.Name = "cmbTurno";
+            this.cmbTurno.Size = new System.Drawing.Size(187, 31);
+            this.cmbTurno.TabIndex = 80;
             // 
             // Funcionario_Cadastrar
             // 
