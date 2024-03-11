@@ -33,9 +33,17 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.lblCadastrarPagamento = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.lblidCliente = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTipoPagamento = new System.Windows.Forms.Label();
+            this.lblidPagamento = new System.Windows.Forms.Label();
+            this.txtidPagamento = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbTipoPagamento = new System.Windows.Forms.ComboBox();
+            this.lblPreçoPagamento = new System.Windows.Forms.Label();
+            this.txtPagamento = new System.Windows.Forms.TextBox();
             this.pnlFuncionario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
             this.pnlCadastro.SuspendLayout();
@@ -109,6 +117,91 @@
             this.lblCadastrarPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCadastrarPagamento.UseMnemonic = false;
             // 
+            // pnlCadastro
+            // 
+            this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
+            this.pnlCadastro.Controls.Add(this.txtPagamento);
+            this.pnlCadastro.Controls.Add(this.lblPreçoPagamento);
+            this.pnlCadastro.Controls.Add(this.cmbTipoPagamento);
+            this.pnlCadastro.Controls.Add(this.lblidCliente);
+            this.pnlCadastro.Controls.Add(this.textBox1);
+            this.pnlCadastro.Controls.Add(this.lblTipoPagamento);
+            this.pnlCadastro.Controls.Add(this.lblidPagamento);
+            this.pnlCadastro.Controls.Add(this.txtidPagamento);
+            this.pnlCadastro.Controls.Add(this.lblStatus);
+            this.pnlCadastro.Controls.Add(this.cmbStatus);
+            this.pnlCadastro.Location = new System.Drawing.Point(72, 109);
+            this.pnlCadastro.Name = "pnlCadastro";
+            this.pnlCadastro.Size = new System.Drawing.Size(1091, 403);
+            this.pnlCadastro.TabIndex = 11;
+            // 
+            // lblidCliente
+            // 
+            this.lblidCliente.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.lblidCliente.Location = new System.Drawing.Point(76, 126);
+            this.lblidCliente.Name = "lblidCliente";
+            this.lblidCliente.Size = new System.Drawing.Size(113, 32);
+            this.lblidCliente.TabIndex = 3;
+            this.lblidCliente.Text = " Cliente:";
+            this.lblidCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
+            this.textBox1.Location = new System.Drawing.Point(350, 134);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(553, 24);
+            this.textBox1.TabIndex = 4;
+            // 
+            // lblTipoPagamento
+            // 
+            this.lblTipoPagamento.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.lblTipoPagamento.Location = new System.Drawing.Point(71, 260);
+            this.lblTipoPagamento.Name = "lblTipoPagamento";
+            this.lblTipoPagamento.Size = new System.Drawing.Size(268, 32);
+            this.lblTipoPagamento.TabIndex = 5;
+            this.lblTipoPagamento.Text = "Tipo de Pagamento:";
+            this.lblTipoPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblidPagamento
+            // 
+            this.lblidPagamento.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.lblidPagamento.Location = new System.Drawing.Point(71, 63);
+            this.lblidPagamento.Name = "lblidPagamento";
+            this.lblidPagamento.Size = new System.Drawing.Size(196, 32);
+            this.lblidPagamento.TabIndex = 1;
+            this.lblidPagamento.Text = "ID Pagamento:";
+            this.lblidPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtidPagamento
+            // 
+            this.txtidPagamento.BackColor = System.Drawing.Color.White;
+            this.txtidPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtidPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtidPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
+            this.txtidPagamento.Location = new System.Drawing.Point(350, 71);
+            this.txtidPagamento.Name = "txtidPagamento";
+            this.txtidPagamento.Size = new System.Drawing.Size(179, 24);
+            this.txtidPagamento.TabIndex = 2;
+            this.txtidPagamento.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.lblStatus.Location = new System.Drawing.Point(589, 66);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(88, 32);
+            this.lblStatus.TabIndex = 54;
+            this.lblStatus.Text = "Status:";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cmbStatus
             // 
             this.cmbStatus.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,31 +210,49 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "ATIVO",
             "DESATIVADO"});
-            this.cmbStatus.Location = new System.Drawing.Point(779, 299);
+            this.cmbStatus.Location = new System.Drawing.Point(701, 66);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(173, 31);
+            this.cmbStatus.Size = new System.Drawing.Size(202, 31);
             this.cmbStatus.TabIndex = 76;
             // 
-            // lblStatus
+            // cmbTipoPagamento
             // 
-            this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblStatus.Location = new System.Drawing.Point(810, 264);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(88, 32);
-            this.lblStatus.TabIndex = 54;
-            this.lblStatus.Text = "Status:";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cmbTipoPagamento.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoPagamento.FormattingEnabled = true;
+            this.cmbTipoPagamento.ItemHeight = 23;
+            this.cmbTipoPagamento.Items.AddRange(new object[] {
+            "Dinheiro",
+            "Pix",
+            "Cartão de Crédito",
+            "Cartão de Débito",
+            "Cartão Vale-alimentação",
+            "Cartão Refeição"});
+            this.cmbTipoPagamento.Location = new System.Drawing.Point(350, 260);
+            this.cmbTipoPagamento.Name = "cmbTipoPagamento";
+            this.cmbTipoPagamento.Size = new System.Drawing.Size(553, 31);
+            this.cmbTipoPagamento.TabIndex = 6;
             // 
-            // pnlCadastro
+            // lblPreçoPagamento
             // 
-            this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.pnlCadastro.Controls.Add(this.lblStatus);
-            this.pnlCadastro.Controls.Add(this.cmbStatus);
-            this.pnlCadastro.Location = new System.Drawing.Point(72, 109);
-            this.pnlCadastro.Name = "pnlCadastro";
-            this.pnlCadastro.Size = new System.Drawing.Size(1091, 403);
-            this.pnlCadastro.TabIndex = 11;
+            this.lblPreçoPagamento.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreçoPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.lblPreçoPagamento.Location = new System.Drawing.Point(76, 196);
+            this.lblPreçoPagamento.Name = "lblPreçoPagamento";
+            this.lblPreçoPagamento.Size = new System.Drawing.Size(263, 32);
+            this.lblPreçoPagamento.TabIndex = 7;
+            this.lblPreçoPagamento.Text = "Peço do Pagamento:";
+            this.lblPreçoPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPagamento
+            // 
+            this.txtPagamento.BackColor = System.Drawing.Color.White;
+            this.txtPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
+            this.txtPagamento.Location = new System.Drawing.Point(350, 204);
+            this.txtPagamento.Name = "txtPagamento";
+            this.txtPagamento.Size = new System.Drawing.Size(553, 24);
+            this.txtPagamento.TabIndex = 8;
             // 
             // frmCadastrarPagamento
             // 
@@ -156,6 +267,7 @@
             this.pnlFuncionario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
             this.pnlCadastro.ResumeLayout(false);
+            this.pnlCadastro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -170,5 +282,13 @@
         private System.Windows.Forms.Panel pnlCadastro;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label lblTipoPagamento;
+        private System.Windows.Forms.Label lblidPagamento;
+        private System.Windows.Forms.TextBox txtidPagamento;
+        private System.Windows.Forms.Label lblidCliente;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbTipoPagamento;
+        private System.Windows.Forms.TextBox txtPagamento;
+        private System.Windows.Forms.Label lblPreçoPagamento;
     }
 }
