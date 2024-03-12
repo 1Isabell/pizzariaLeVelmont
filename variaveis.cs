@@ -19,9 +19,19 @@ namespace pizzariaLeVelmont
 
 
 
-        //Funcionario
+        //Funcionario - VANZELLI
         public static int codFuncionario;
         public static string nomeFuncionario, cpfFuncionario, telefoneFuncionario,emailFuncionario, turnoFuncionario, funcaoFuncionario, nivelFuncionario, statusFuncionario;
         public static DateTime dataNascFuncionario;
+
+
+        //PAGAMENTOS - ISABELLA
+        public static int CodPagamento;
+        public static string  precoPagamento, tipoPagamento, statusPagamento;
+
+        //CLIENTE -ISABELLA
+
+        public static int codCliente;
+        public static string nomeCliente;
     }
 }

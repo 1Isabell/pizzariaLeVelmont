@@ -15,10 +15,11 @@ namespace pizzariaLeVelmont
     public static class banco
     {
 
-        public static DataGridView 
-            dgSomaPlanos, 
-            dgContato, 
-            dgFuncionario;//Formulario Funcionario
+        public static DataGridView
+            dgSomaPlanos,
+            dgContato,
+            dgFuncionario,//Formulario Funcionario
+            dgPagamento; //FORMULARIO PAGAMENTO/LISTAR
 
 
 
@@ -200,7 +201,7 @@ namespace pizzariaLeVelmont
                     variaveis.funcaoFuncionario = reader.GetString(7);
                     variaveis.nivelFuncionario = reader.GetString(8);
                     variaveis.statusFuncionario = reader.GetString(9);
-                    
+
 
                 }
                 conexao.Desconectar();
@@ -229,7 +230,7 @@ namespace pizzariaLeVelmont
                 cmd.Parameters.AddWithValue("@funcao", variaveis.funcaoFuncionario);
                 cmd.Parameters.AddWithValue("@nivel", variaveis.nivelFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
-                
+
 
 
                 //cmd parametros
@@ -238,7 +239,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Funcionario cadastro com sucesso!", "CADASTRO FUNCIONÁRIO");
                 conexao.Desconectar();
 
-               
+
             }
             catch (Exception erro)
             {
@@ -281,5 +282,145 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Erro ao alterar funcionario!\n\n" + erro.Message, "ERRO");
             }
         }
+
+
+        //SEÇÃO PAGAMENTO //
+
+        //CARREGAR PAGAMENTO 
+
+        public static void CarregarPagamento()
+        {
+            try
+            {
+                conexao.Conectar();
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT * FROM tblpagamento;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgPagamento.DataSource = dt;
+
+                dgPagamento.Columns[0].HeaderText = "ID Pagamento";
+                dgPagamento.Columns[1].HeaderText = "Status";
+                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
+                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[4].HeaderText = "ID Cliente";
+
+                dgPagamento.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Pagamentos!\n\n" + erro);
+            }
+
+        }
+
+        //RESPONSAVEL DE LISTAR OS ID 
+        public static void CarregarPagamentoNome()
+        {
+            try
+            {
+                conexao.Conectar();
+
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                //COMO TRAZER O NOME DO CLIENTE NO LUGAR DO IR
+                string selecionar = "SELECT * FROM tblpagamento WHERE statusPagamento = 'PENDENTES' LIKE '%" + variaveis.statusPagamento + "%' ORDER BY statusPagamento;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgPagamento.DataSource = dt;
+
+                dgPagamento.Columns[0].HeaderText = "ID Pagamento";
+                dgPagamento.Columns[1].HeaderText = "Status";
+                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
+                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[4].HeaderText = "ID Cliente";
+
+                dgPagamento.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Pagamentos!\n\n" + erro);
+            }
+
+        }
+
+        //RESPONSAVEL DE LISTAR OS PAGAMENTOS ATIVOS
+        public static void CarregarPagamentoStatus()
+        {
+            try
+            {
+                conexao.Conectar();
+
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT * FROM tblpagamento WHERE statusPagamento = 'ATIVO' ORDER BY idCliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgPagamento.DataSource = dt;
+
+
+                dgPagamento.Columns[0].HeaderText = "ID Pagamento";
+                dgPagamento.Columns[1].HeaderText = "Status";
+                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
+                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[4].HeaderText = "ID Cliente";
+
+                dgPagamento.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Pagamentos!\n\n" + erro);
+            }
+        }
+
+        //STATUS PENDENTE
+        public static void CarregarPagamentoStatusPendente()
+        {
+            try
+            {
+                conexao.Conectar();
+
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT * FROM tblpagamento WHERE statusPagamento = 'PENDENTE' ORDER BY idCliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgPagamento.DataSource = dt;
+
+
+                dgPagamento.Columns[0].HeaderText = "ID Pagamento";
+                dgPagamento.Columns[1].HeaderText = "Status";
+                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
+                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[4].HeaderText = "ID Cliente";
+
+                dgPagamento.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Pagamentos!\n\n" + erro);
+            }
+        }
     }
+
 }
+
+
+

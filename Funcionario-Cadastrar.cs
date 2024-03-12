@@ -22,7 +22,7 @@ namespace pizzariaLeVelmont
         {
             if (variaveis.funcao == "ALTERAR")
             {
-                lblFuncionario.Text = "A\nl\nt\ne\nr\na\nr\n\nF\nu\nn\nc\ni\no\nn\ná\nr\ni\no";
+                lblFuncionario.Text = "Alterar Informações do Funcionário";
                 banco.CarregarDadosFuncionario();
                 txtNome.Text = variaveis.nomeFuncionario;
                 txtEmail.Text = variaveis.emailFuncionario;
@@ -175,6 +175,8 @@ namespace pizzariaLeVelmont
                 else if (variaveis.funcao == "ALTERAR")
                 {
                     banco.AlterarFuncionario();
+                    new Funcionario_Listar().Show();
+                    Hide();
 
                 }
                 btnLimpar.Enabled = false;

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFundoFuncionario = new System.Windows.Forms.Panel();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.cbStatusDesativo = new System.Windows.Forms.CheckBox();
-            this.cbStatusAtivo = new System.Windows.Forms.CheckBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.lblListarPagamento = new System.Windows.Forms.Label();
             this.lblStatusPagamento = new System.Windows.Forms.Label();
             this.txtNomePagamento = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             this.pnlFundoFuncionario.BackColor = System.Drawing.Color.White;
             this.pnlFundoFuncionario.Controls.Add(this.pctSair);
             this.pnlFundoFuncionario.Controls.Add(this.cbStatusDesativo);
-            this.pnlFundoFuncionario.Controls.Add(this.cbStatusAtivo);
+            this.pnlFundoFuncionario.Controls.Add(this.chkAtivo);
             this.pnlFundoFuncionario.Controls.Add(this.lblListarPagamento);
             this.pnlFundoFuncionario.Controls.Add(this.lblStatusPagamento);
             this.pnlFundoFuncionario.Controls.Add(this.txtNomePagamento);
@@ -89,22 +89,24 @@
             this.cbStatusDesativo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
             this.cbStatusDesativo.Location = new System.Drawing.Point(1029, 75);
             this.cbStatusDesativo.Name = "cbStatusDesativo";
-            this.cbStatusDesativo.Size = new System.Drawing.Size(134, 34);
+            this.cbStatusDesativo.Size = new System.Drawing.Size(141, 34);
             this.cbStatusDesativo.TabIndex = 54;
-            this.cbStatusDesativo.Text = "Desativo";
+            this.cbStatusDesativo.Text = "Pendente";
             this.cbStatusDesativo.UseVisualStyleBackColor = true;
+            this.cbStatusDesativo.CheckedChanged += new System.EventHandler(this.cbStatusDesativo_CheckedChanged);
             // 
-            // cbStatusAtivo
+            // chkAtivo
             // 
-            this.cbStatusAtivo.AutoSize = true;
-            this.cbStatusAtivo.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatusAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.cbStatusAtivo.Location = new System.Drawing.Point(885, 75);
-            this.cbStatusAtivo.Name = "cbStatusAtivo";
-            this.cbStatusAtivo.Size = new System.Drawing.Size(91, 34);
-            this.cbStatusAtivo.TabIndex = 53;
-            this.cbStatusAtivo.Text = "Ativo";
-            this.cbStatusAtivo.UseVisualStyleBackColor = true;
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.chkAtivo.Location = new System.Drawing.Point(885, 75);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(91, 34);
+            this.chkAtivo.TabIndex = 53;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = true;
+            this.chkAtivo.CheckedChanged += new System.EventHandler(this.chkAtivo_CheckedChanged);
             // 
             // lblListarPagamento
             // 
@@ -142,6 +144,7 @@
             this.txtNomePagamento.Name = "txtNomePagamento";
             this.txtNomePagamento.Size = new System.Drawing.Size(505, 32);
             this.txtNomePagamento.TabIndex = 45;
+            this.txtNomePagamento.TextChanged += new System.EventHandler(this.txtNomePagamento_TextChanged);
             // 
             // lblNomePagamento
             // 
@@ -208,24 +211,24 @@
             this.dgvPagamento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPagamento.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.dgvPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPagamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPagamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPagamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Yu Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(183)))), ((int)(((byte)(5)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPagamento.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Yu Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.NullValue = null;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(183)))), ((int)(((byte)(5)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPagamento.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPagamento.EnableHeadersVisualStyles = false;
             this.dgvPagamento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(183)))), ((int)(((byte)(5)))));
             this.dgvPagamento.Location = new System.Drawing.Point(25, 115);
@@ -264,6 +267,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPagamentoListar";
             this.Text = "formulario_pagamento_listar";
+            this.Load += new System.EventHandler(this.frmPagamentoListar_Load);
             this.pnlFundoFuncionario.ResumeLayout(false);
             this.pnlFundoFuncionario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
@@ -278,7 +282,7 @@
         private System.Windows.Forms.Panel pnlFundoFuncionario;
         private System.Windows.Forms.PictureBox pctSair;
         private System.Windows.Forms.CheckBox cbStatusDesativo;
-        private System.Windows.Forms.CheckBox cbStatusAtivo;
+        private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.Label lblListarPagamento;
         private System.Windows.Forms.Label lblStatusPagamento;
         private System.Windows.Forms.TextBox txtNomePagamento;
