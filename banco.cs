@@ -294,7 +294,7 @@ namespace pizzariaLeVelmont
             {
                 conexao.Conectar();
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT * FROM tblpagamento;";
+                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente\r\nFROM tblpagamento\r\nINNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente\r\n\r\nWHERE tblcliente.nomeCliente LIKE '%\"+variaveis.nomeCliente+\"%'\r\nORDER BY tblcliente.nomeCliente\r\n";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -307,6 +307,7 @@ namespace pizzariaLeVelmont
                 dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
                 dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
                 dgPagamento.Columns[4].HeaderText = "ID Cliente";
+                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
 
                 dgPagamento.ClearSelection();
 
@@ -328,7 +329,7 @@ namespace pizzariaLeVelmont
 
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
                 //COMO TRAZER O NOME DO CLIENTE NO LUGAR DO IR
-                string selecionar = "SELECT * FROM tblpagamento WHERE statusPagamento = 'PENDENTES' LIKE '%" + variaveis.statusPagamento + "%' ORDER BY statusPagamento;";
+                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente FROM tblpagamento INNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente WHERE tblcliente.nomeCliente LIKE '%\"+variaveis.nomeCliente+\"%' ORDER BY tblcliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -341,6 +342,7 @@ namespace pizzariaLeVelmont
                 dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
                 dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
                 dgPagamento.Columns[4].HeaderText = "ID Cliente";
+                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
 
                 dgPagamento.ClearSelection();
 
@@ -361,7 +363,7 @@ namespace pizzariaLeVelmont
                 conexao.Conectar();
 
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT * FROM tblpagamento WHERE statusPagamento = 'ATIVO' ORDER BY idCliente;";
+                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente FROM tblpagamento INNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente WHERE statusPagamento = 'ATIVO' ORDER BY tblcliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -375,6 +377,7 @@ namespace pizzariaLeVelmont
                 dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
                 dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
                 dgPagamento.Columns[4].HeaderText = "ID Cliente";
+                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
 
                 dgPagamento.ClearSelection();
 
@@ -394,7 +397,7 @@ namespace pizzariaLeVelmont
                 conexao.Conectar();
 
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT * FROM tblpagamento WHERE statusPagamento = 'PENDENTE' ORDER BY idCliente;";
+                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente FROM tblpagamento INNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente WHERE statusPagamento = 'PENDENTE' ORDER BY tblcliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -408,6 +411,7 @@ namespace pizzariaLeVelmont
                 dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
                 dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
                 dgPagamento.Columns[4].HeaderText = "ID Cliente";
+                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
 
                 dgPagamento.ClearSelection();
 
@@ -418,7 +422,83 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Erro ao carregar os Pagamentos!\n\n" + erro);
             }
         }
+
+        //INSERIR PAGAMENTOS
+         public static void InserirPagamento()
+        {
+            conexao.Conectar();
+            string inserir = "INSERT INTO `tblpagamento`( statusPagamento, tipoPagamento, preçoPagamento, idCliente) VALUES (@statusPagamento,@tipoPagamento,@precoPagamento,@codCliente);";
+            MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
+            //PARÁMETROS
+            cmd.Parameters.AddWithValue("@statusPagamento", variaveis.statusPagamento); //ADICIONAR OS VALORES DO PARÁMETROS NA VAR
+            cmd.Parameters.AddWithValue("@tipoPagamento", variaveis.tipoPagamento);
+            cmd.Parameters.AddWithValue("@precoPagamento", variaveis.precoPagamento);
+            cmd.Parameters.AddWithValue("@codCliente", variaveis.codCliente);
+         
+         
+            
+            //FIM PARÁMETROS    
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Pagamento cadastrado com sucesso!", "CADASTRO DO PAGAMENTO");
+            conexao.Desconectar();
+
+        }
+
+        //CARREGAR PAGAMENTO 
+
+        public static void CarregarDadosPagamento()
+        {
+           try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM tblpagamento WHERE idPagamento = @codPagamento;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                cmd.Parameters.AddWithValue("@codPagamento", variaveis.CodPagamento);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variaveis.statusPagamento = reader.GetString(1);
+                    variaveis.tipoPagamento = reader.GetString(2);
+                    variaveis.precoPagamento = reader.GetString(3);
+                    variaveis.nomeCliente = reader.GetString(4);
+                }
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os dados do funcionario!\n\n" + erro);
+            }
+
+        }
+
+        //ALTERAR PAGAMENTO
+        public static void AlterarPagamento()
+        {
+            try
+            {
+                conexao.Conectar();
+                string alterar = "UPDATE tblpagamento SET statusPagamento = @statusPagamento, tipoPagamento = @tipoPagamento, preçoPagamento = precoPagamento, idCliente = codCliente WHERE idPagamento = codPadamento;";
+
+                MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
+                //PARÁMETROS
+                cmd.Parameters.AddWithValue("@statusPagamento", variaveis.statusPagamento); //ADICIONAR OS VALORES DO PARÁMETROS NA VAR
+                cmd.Parameters.AddWithValue("@tipoPagamento", variaveis.tipoPagamento);
+                cmd.Parameters.AddWithValue("@precoPagamento", variaveis.precoPagamento);
+                cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
+
+                //FIM PARÁMETROS    
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Pagamento alterado com sucesso!", "CADASTRO ALTERARADO");
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao alterar o Pagamento!\n\n." + erro.Message, "ERRO!");
+            }
+        }
     }
+
+
 
 }
 

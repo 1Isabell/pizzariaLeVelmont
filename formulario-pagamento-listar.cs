@@ -19,11 +19,8 @@ namespace pizzariaLeVelmont
 
         private void pctSair_Click(object sender, EventArgs e)
         {
-            var resposta = MessageBox.Show("Deseja Encerrar?", "ENCERRAR", MessageBoxButtons.YesNo);
-            if (resposta == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            new frmMenuPrincipal().Show();
+            Close();
         }
 
         private void frmPagamentoListar_Load(object sender, EventArgs e)
@@ -36,7 +33,7 @@ namespace pizzariaLeVelmont
         private void txtNomePagamento_TextChanged(object sender, EventArgs e)
         {
             variaveis.nomeCliente = txtNomePagamento.Text;
-            banco.CarregarPagamento();
+            banco.CarregarPagamentoNome();
 
             if (txtNomePagamento.Text == "")
             {
@@ -64,9 +61,9 @@ namespace pizzariaLeVelmont
         }
 
         //STATUS PENDENTE
-        private void cbStatusDesativo_CheckedChanged(object sender, EventArgs e)
+        private void chkPendente_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkAtivo.Checked == true)
+            if (chkPendente.Checked == true)
             {
                 banco.CarregarPagamentoStatusPendente();
                 txtNomePagamento.Enabled = false;
@@ -76,6 +73,30 @@ namespace pizzariaLeVelmont
                 banco.CarregarPagamentoStatusPendente();
                 txtNomePagamento.Enabled = true;
             }
+        }
+
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "CADASTRAR";
+            new frmCadastrarPagamento().Show();
+            Hide();
+        }
+
+        private void dgvPagamento_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if(variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.CodPagamento = Convert.ToInt32(dgvPagamento[0,
+                    variaveis.linhaSelecionada].Value);
+            }
+        }
+
+        private void dgvPagamento_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dgvPagamento.Sort(dgvPagamento.Columns[1], ListSortDirection.Ascending);
+            dgvPagamento.ClearSelection();
         }
     }
 }
