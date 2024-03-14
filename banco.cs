@@ -762,6 +762,252 @@ namespace pizzariaLeVelmont
 
 
 
+    //SEÇÃO ESTOQUE //
+    public static void CarregarEstoque()
+    {
+        try
+        {
+            conexao.Conectar();
+            string selecionar = "SELECT * FROM tblestoque ORDER BY nomedoProduto;";
+            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dgEstoque.DataSource = dt;
+            dgEstoque.Columns[0].Visible = false; //ID
+            dgEstoque.Columns[1].HeaderText = "Nome";
+            dgEstoque.Columns[2].HeaderText = "Quantidade";
+            dgEstoque.Columns[3].HeaderText = "Preço Unitário";
+            dgEstoque.Columns[4].HeaderText = "Data Válidade";
+            dgEstoque.Columns[5].HeaderText = "Fornecedor";
+            dgEstoque.Columns[6].HeaderText = "Categoria";
+            dgEstoque.Columns[7].HeaderText = "Status";
+
+
+
+            dgEstoque.ClearSelection();
+
+            conexao.Desconectar();
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao carregar o Estoque!\n\n" + erro);
+        }
+    } //Carregar Informações
+
+    public static void CarregarEstoqueNome()
+    {
+        try
+        {
+            conexao.Conectar();
+            string selecionar = "SELECT * FROM tblestoque WHERE nomedoProduto Like '%" + variaveis.nomeEstoque + "%' ORDER BY nomedoProduto;";
+            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dgEstoque.DataSource = dt;
+            dgEstoque.Columns[0].Visible = false; //ID
+            dgEstoque.Columns[1].HeaderText = "Nome";
+            dgEstoque.Columns[2].HeaderText = "Quantidade";
+            dgEstoque.Columns[3].HeaderText = "Preço Unitário";
+            dgEstoque.Columns[4].HeaderText = "Data Válidade";
+            dgEstoque.Columns[5].HeaderText = "Fornecedor";
+            dgEstoque.Columns[6].HeaderText = "Categoria";
+            dgEstoque.Columns[7].HeaderText = "Status";
+
+
+            dgEstoque.ClearSelection();
+
+            conexao.Desconectar();
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao carregar o Estoque!\n\n" + erro);
+        }
+    }  //Carregar Informações Focada no Nome
+
+    public static void CarregarEstoqueStatusAtivo()
+    {
+        try
+        {
+            conexao.Conectar();
+            string selecionar = "SELECT * FROM `tblestoque`  WHERE statusEstoque = 'ATIVO' ORDER BY nomedoProduto;";
+            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dgEstoque.DataSource = dt;
+            dgEstoque.Columns[0].Visible = false; //ID
+            dgEstoque.Columns[1].HeaderText = "Nome";
+            dgEstoque.Columns[2].HeaderText = "Quantidade";
+            dgEstoque.Columns[3].HeaderText = "Preço Unitário";
+            dgEstoque.Columns[4].HeaderText = "Data Válidade";
+            dgEstoque.Columns[5].HeaderText = "Fornecedor";
+            dgEstoque.Columns[6].HeaderText = "Categoria";
+            dgEstoque.Columns[7].HeaderText = "Status";
+
+
+
+            dgEstoque.ClearSelection();
+            conexao.Desconectar();
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao carregar o Estoque!\n\n" + erro);
+        }
+    } //Status Ativo
+
+    public static void CarregarEstoqueStatusDesativo()
+    {
+        try
+        {
+            conexao.Conectar();
+            string selecionar = "SELECT * FROM `tblestoque`  WHERE statusEstoque = 'DESATIVADO' ORDER BY nomedoProduto;";
+            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dgEstoque.DataSource = dt;
+            dgEstoque.Columns[0].Visible = false; //ID
+            dgEstoque.Columns[1].HeaderText = "Nome";
+            dgEstoque.Columns[2].HeaderText = "Quantidade";
+            dgEstoque.Columns[3].HeaderText = "Preço Unitário";
+            dgEstoque.Columns[4].HeaderText = "Data Válidade";
+            dgEstoque.Columns[5].HeaderText = "Fornecedor";
+            dgEstoque.Columns[6].HeaderText = "Categoria";
+            dgEstoque.Columns[7].HeaderText = "Status";
+
+
+
+            dgEstoque.ClearSelection();
+            conexao.Desconectar();
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao carregar o Estoque!\n\n" + erro);
+        }
+    } //Status Desativo
+
+    public static void DesativarEstoque()
+    {
+        try
+        {
+            conexao.Conectar();
+            string alterar = "UPDATE tblestoque SET statusEstoque= 'DESATIVADO' WHERE idEstoque=@codigo;";
+            MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
+            cmd.Parameters.AddWithValue("@status", variaveis.statusEstoque);
+            cmd.Parameters.AddWithValue("@codigo", variaveis.codEstoque);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Produto desativado com sucesso!", "EXCLUIR PRODUTO DO ESTOQUE");
+            conexao.Desconectar();
+
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao desativar produto do estoque!\n\n" + erro.Message, "ERRO");
+        }
+    } //Desativar
+
+    public static void CarregarDadosEstoque()
+    {
+        try
+        {
+            conexao.Conectar();
+            string selecionar = "SELECT * FROM tblestoque WHERE idEstoque = @codigo;";
+            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+            cmd.Parameters.AddWithValue("codigo", variaveis.codEstoque);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                variaveis.nomeEstoque = reader.GetString(1);
+                variaveis.quantidadeEstoque = reader.GetString(2);
+                variaveis.preçoEstoque = reader.GetString(3);
+                variaveis.dataValidadeEstoque = reader.GetDateTime(4);
+                variaveis.fornecedorEstoque = reader.GetString(5);
+                variaveis.categoriaEstoque = reader.GetString(6);
+                variaveis.statusEstoque = reader.GetString(7);
+
+
+            }
+            conexao.Desconectar();
+
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao carregar os dados do estoque!\n\n" + erro);
+        }
+    }//Carregar
+
+    public static void InserirProdutoEstoque()
+    {
+        try
+        {
+            conexao.Conectar();
+            string inserir = "INSERT INTO tblestoque(nomedoProduto, quantidade, preçoUnitário, datadeValidade, fornecedor, Categoria, statusEstoque) VALUES (@nome,@quantidade,@preço,@data,@fornecedor,@categoria,@status);";
+            MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
+            //parametros
+            cmd.Parameters.AddWithValue("@nome", variaveis.nomeEstoque);
+            cmd.Parameters.AddWithValue("@quantidade", variaveis.quantidadeEstoque);
+            cmd.Parameters.AddWithValue("@preço", variaveis.preçoEstoque);
+            cmd.Parameters.AddWithValue("@data", variaveis.dataValidadeEstoque);
+            cmd.Parameters.AddWithValue("@fornecedor", variaveis.fornecedorEstoque);
+            cmd.Parameters.AddWithValue("@categoria", variaveis.categoriaEstoque);
+            cmd.Parameters.AddWithValue("@status", variaveis.statusEstoque);
+
+
+
+
+            //cmd parametros
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("produto do estoque cadastrado com sucesso!", "CADASTRO ESTOQUE");
+            conexao.Desconectar();
+
+
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao cadastrar produto do estoque!\n\n" + erro.Message, "ERRO");
+        }
+
+
+
+    } //Cadastrar
+
+    public static void AlterarFuncionario()
+    {
+        try
+        {
+            conexao.Conectar();
+            string alterar = "UPDATE tblestoque SET nomedoProduto=@nome,quantidade=@quantidade,preçoUnitário=@preço,datadeValidade=@data,fornecedor=@fornecedor,Categoria=@categoria,statusEstoque=@status WHERE idEstoque=@codigo;";
+            MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
+            //parametros
+            cmd.Parameters.AddWithValue("@nome", variaveis.nomeEstoque);
+            cmd.Parameters.AddWithValue("@quantidade", variaveis.quantidadeEstoque);
+            cmd.Parameters.AddWithValue("@preço", variaveis.preçoEstoque);
+            cmd.Parameters.AddWithValue("@data", variaveis.dataValidadeEstoque);
+            cmd.Parameters.AddWithValue("@fornecedor", variaveis.fornecedorEstoque);
+            cmd.Parameters.AddWithValue("@categoria", variaveis.categoriaEstoque);
+            cmd.Parameters.AddWithValue("@status", variaveis.statusEstoque);
+            cmd.Parameters.AddWithValue("@codigo", variaveis.codEstoque);
+
+            //cmd parametros
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("produto do estoque alterado com sucesso!", "ALTERAÇÃO DO ESTOQUE");
+            conexao.Desconectar();
+
+
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao alterar estoque!\n\n" + erro.Message, "ERRO");
+        }
+    }
 
 
 
@@ -776,7 +1022,6 @@ namespace pizzariaLeVelmont
 
 
 
-    
 
 
 
