@@ -33,7 +33,7 @@ namespace pizzariaLeVelmont
         private void txtNomePagamento_TextChanged(object sender, EventArgs e)
         {
             variaveis.nomeCliente = txtNomePagamento.Text;
-            banco.CarregarPagamentoNome();
+            banco.CarregarPagamentoNome(); // CARREGAR O NOME DO CLIENTE
 
             if (txtNomePagamento.Text == "")
             {
