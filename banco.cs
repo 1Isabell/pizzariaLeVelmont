@@ -19,7 +19,10 @@ namespace pizzariaLeVelmont
             dgSomaPlanos,
             dgContato,
             dgFuncionario,//Formulario Funcionario
-            dgPagamento; //FORMULARIO PAGAMENTO/LISTAR
+            dgPagamento, //FORMULARIO PAGAMENTO/LISTAR
+            dgProduto, //Formulario Produto
+            dgEstoque, //Formulario Estoque
+            dgCliente;
 
 
 
@@ -281,7 +284,11 @@ namespace pizzariaLeVelmont
             {
                 MessageBox.Show("Erro ao alterar funcionario!\n\n" + erro.Message, "ERRO");
             }
-        }
+        } //Alterar
+
+
+
+
 
 
         //SEÇÃO PAGAMENTO //
@@ -496,11 +503,310 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Erro ao alterar o Pagamento!\n\n." + erro.Message, "ERRO!");
             }
         }
+
+
+        //SEÇÃO CLIENTE//
+
+        //LISTAR CLIENTE
+
+        public static void CarregarCliente()
+        {
+            try
+            { 
+
+                conexao.Conectar();
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT * FROM tblcliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgCliente.DataSource = dt;
+
+                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[1].HeaderText = "Nome";
+                dgCliente.Columns[2].HeaderText = "Data de Nascimento";
+                dgCliente.Columns[3].HeaderText = "Telefone";
+                dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
+                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
+                dgCliente.Columns[6].HeaderText = "Status";
+
+                dgCliente.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro) 
+            {
+                MessageBox.Show("Erro ao carregar o Cliente!\n\n" + erro);
+            }
+        }
+
+
+        public static void CarregarClienteNome()
+        { 
+            try
+            {
+                conexao.Conectar();
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT * FROM tblcliente WHERE nomeCliente LIKE '%\"+variaveis.nomeInstrutor+\"%' ORDER BY nomeCliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgCliente.DataSource= dt;
+
+                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[1].HeaderText = "Nome";
+                dgCliente.Columns[2].HeaderText = "Data de Nascimento";
+                dgCliente.Columns[3].HeaderText = "Telefone";
+                dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
+                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
+                dgCliente.Columns[6].HeaderText = "Status";
+
+                dgCliente.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar o Cliente!\n\n" + erro);
+            }
+        }
+
+        //STATUS ATIVO 
+        public static void CarregarStatusCliente()
+        {
+            try
+            {
+                conexao.Conectar();
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT nomeCliente, statusCliente FROM tblcliente WHERE statusCliente = 'ATIVO' ORDER BY nomeCliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgCliente.DataSource = dt; //objeto não encontrado
+
+                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[1].HeaderText = "Nome";
+                dgCliente.Columns[2].HeaderText = "Data de Nascimento";
+                dgCliente.Columns[3].HeaderText = "Telefone";
+                dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
+                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
+                dgCliente.Columns[6].HeaderText = "Status";
+
+                dgCliente.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar o Cliente!\n\n" + erro);
+            }
+        }
+
+
+        //STATUS CLIENTE ONDE MOSTRAR O VALOR DO PAGAMENTO PENDENTE
+
+
+
+        public static void CarregarStatusPendente()
+        {
+            try
+            {
+                conexao.Conectar();
+                //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
+                string selecionar = "SELECT nomeCliente, statusCliente, pagamentosPendentes FROM tblcliente WHERE statusCliente = 'ATIVO' ORDER BY nomeCliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgCliente.DataSource = dt;
+
+                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[1].HeaderText = "Nome";
+                dgCliente.Columns[2].HeaderText = "Data de Nascimento";
+                dgCliente.Columns[3].HeaderText = "Telefone";
+                dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
+                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
+                dgCliente.Columns[6].HeaderText = "Status";
+
+                dgCliente.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar o Cliente!\n\n" + erro);
+            }
+        }
+
+
+        //INSERIR CLIENTE
+
+        public static void InserirCliente()
+
+        {
+            try
+            {
+                conexao.Conectar();
+                string inserir = "INSERT INTO `tblcliente`( `nomeCliente`, `dataNascCliente`, `telefoneCliente`, `enderecoCliente`, `pagamentosPendentes`, `statusCliente`) \r\nVALUES (@nomeCliente, @dataNascimentoC,@telefoneCliente,@enderecoCliente,@pagamentoPendCliente,@statusCliente);";
+                MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
+
+                cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
+                cmd.Parameters.AddWithValue("@dataNascimentoC", variaveis.dataNascimentoC);
+                cmd.Parameters.AddWithValue("@telefoneCliente", variaveis.telefoneClinte);
+                cmd.Parameters.AddWithValue("@enderecoCliente", variaveis.enderecoCliente);
+                cmd.Parameters.AddWithValue("@pagamentoPendCliente", variaveis.pagamentoPendCliente);
+                cmd.Parameters.AddWithValue("@statusCliente", variaveis.statusCliente);
+
+                //FIM PARÁMETROS    
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cliente cadastrado com sucesso!", "CADASTRO CLIENTE");
+                conexao.Desconectar();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao cadastrar o Cliente!\n\n" + erro.Message, "ERRO");
+            }
+        }
+
+        public static void CarregarDadosCliente()
+        {
+            try
+            {
+                conexao.Conectar();
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM tblcliente WHERE idCliente = codCliente;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variaveis.nomeCliente = reader.GetString(1);
+                    variaveis.dataNascimentoC = reader.GetDateTime(2);
+                    variaveis.telefoneClinte = reader.GetString(3);
+                    variaveis.enderecoCliente = reader.GetString(4);
+                    variaveis.pagamentoPendCliente = reader.GetString(5);
+                    variaveis.statusCliente = reader.GetString(6);
+                }
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os dados do cliente!\n\n" + erro);
+            }
+        }
+        
+
+    public static void AlterarCliente()
+    {
+        try
+        {  conexao.Conectar();
+           
+            string selecionar = "UPDATE `tblcliente` SET nomeCliente = @nomeCliente, dataNascCliente = @dataNascimentoC, telefoneCliente = @telefoneCliente,enderecoCliente= @enderecoCliente, pagamentosPendentes= @pagamentoPendCliente, statusCliente = @statusCliente WHERE idCliente = codCliente;";
+            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+            cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                variaveis.nomeCliente = reader.GetString(1);
+                variaveis.dataNascimentoC = reader.GetDateTime(2);
+                variaveis.telefoneClinte = reader.GetString(3);
+                variaveis.enderecoCliente = reader.GetString(4);
+                variaveis.pagamentoPendCliente = reader.GetString(5);
+                variaveis.statusCliente = reader.GetString(6);
+            }
+            conexao.Desconectar();
+        }
+        catch (Exception erro)
+        {
+            MessageBox.Show("Erro ao carregar os dados do cliente!\n\n" + erro);
+        }
+    }
+    
+        //DESATIVAR 
+
+        public static void DesativarCliente()
+        {
+            try
+            {
+               
+                conexao.Conectar();
+                string inserir = "UPDATE tblcliente SET statusCliente = @statusCliente WHERE idCliente= @codCliente;";
+                MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
+
+                //parametros
+                cmd.Parameters.AddWithValue("@statusCliente", variaveis.statusCliente);
+                cmd.Parameters.AddWithValue("@codCliente", variaveis.codCliente);
+                // fim parametros
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cliente desativado com sucesso!", "EXCLUIR CLIENTE");
+                conexao.Desconectar();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao desativar o cliente!\n\n" + erro.Message, "ERRO");
+            }
+        }
+        
     }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
 
 
 

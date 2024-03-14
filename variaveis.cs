@@ -25,6 +25,12 @@ namespace pizzariaLeVelmont
         public static DateTime dataNascFuncionario;
 
 
+        //Estoque - VANZELLI
+        public static int codEstoque;
+        public static string nomeEstoque, quantidadeEstoque, preçoEstoque, fornecedorEstoque,categoriaEstoque, statusEstoque;
+        public static DateTime dataValidadeEstoque;
+
+
         //PAGAMENTOS - ISABELLA
         public static int CodPagamento;
         public static string  precoPagamento, tipoPagamento, statusPagamento;
@@ -32,6 +38,7 @@ namespace pizzariaLeVelmont
         //CLIENTE -ISABELLA
 
         public static int codCliente;
-        public static string nomeCliente;
+        public static string nomeCliente, telefoneClinte, enderecoCliente,pagamentoPendCliente, statusCliente;
+        public static DateTime dataNascimentoC;
     }
 }

@@ -30,7 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlFundoFuncionario = new System.Windows.Forms.Panel();
+            this.pnlFundoPagamento = new System.Windows.Forms.Panel();
+            this.chkPendente = new System.Windows.Forms.CheckBox();
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.lblListarPagamento = new System.Windows.Forms.Label();
@@ -43,33 +44,45 @@
             this.dgvPagamento = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.chkPendente = new System.Windows.Forms.CheckBox();
-            this.pnlFundoFuncionario.SuspendLayout();
+            this.pnlFundoPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlFundoFuncionario
+            // pnlFundoPagamento
             // 
-            this.pnlFundoFuncionario.BackColor = System.Drawing.Color.White;
-            this.pnlFundoFuncionario.Controls.Add(this.chkPendente);
-            this.pnlFundoFuncionario.Controls.Add(this.pctSair);
-            this.pnlFundoFuncionario.Controls.Add(this.chkAtivo);
-            this.pnlFundoFuncionario.Controls.Add(this.lblListarPagamento);
-            this.pnlFundoFuncionario.Controls.Add(this.lblStatusPagamento);
-            this.pnlFundoFuncionario.Controls.Add(this.txtNomePagamento);
-            this.pnlFundoFuncionario.Controls.Add(this.lblNomePagamento);
-            this.pnlFundoFuncionario.Controls.Add(this.btnAlterar);
-            this.pnlFundoFuncionario.Controls.Add(this.btnExcluir);
-            this.pnlFundoFuncionario.Controls.Add(this.btnCadastrar);
-            this.pnlFundoFuncionario.Controls.Add(this.dgvPagamento);
-            this.pnlFundoFuncionario.Controls.Add(this.panel1);
-            this.pnlFundoFuncionario.Controls.Add(this.pictureBox2);
-            this.pnlFundoFuncionario.Location = new System.Drawing.Point(5, 5);
-            this.pnlFundoFuncionario.Name = "pnlFundoFuncionario";
-            this.pnlFundoFuncionario.Size = new System.Drawing.Size(1220, 655);
-            this.pnlFundoFuncionario.TabIndex = 2;
+            this.pnlFundoPagamento.BackColor = System.Drawing.Color.White;
+            this.pnlFundoPagamento.Controls.Add(this.chkPendente);
+            this.pnlFundoPagamento.Controls.Add(this.pctSair);
+            this.pnlFundoPagamento.Controls.Add(this.chkAtivo);
+            this.pnlFundoPagamento.Controls.Add(this.lblListarPagamento);
+            this.pnlFundoPagamento.Controls.Add(this.lblStatusPagamento);
+            this.pnlFundoPagamento.Controls.Add(this.txtNomePagamento);
+            this.pnlFundoPagamento.Controls.Add(this.lblNomePagamento);
+            this.pnlFundoPagamento.Controls.Add(this.btnAlterar);
+            this.pnlFundoPagamento.Controls.Add(this.btnExcluir);
+            this.pnlFundoPagamento.Controls.Add(this.btnCadastrar);
+            this.pnlFundoPagamento.Controls.Add(this.dgvPagamento);
+            this.pnlFundoPagamento.Controls.Add(this.panel1);
+            this.pnlFundoPagamento.Controls.Add(this.pictureBox2);
+            this.pnlFundoPagamento.Location = new System.Drawing.Point(5, 5);
+            this.pnlFundoPagamento.Name = "pnlFundoPagamento";
+            this.pnlFundoPagamento.Size = new System.Drawing.Size(1220, 655);
+            this.pnlFundoPagamento.TabIndex = 2;
+            // 
+            // chkPendente
+            // 
+            this.chkPendente.AutoSize = true;
+            this.chkPendente.Font = new System.Drawing.Font("Britannic Bold", 20.25F);
+            this.chkPendente.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.chkPendente.Location = new System.Drawing.Point(1032, 75);
+            this.chkPendente.Name = "chkPendente";
+            this.chkPendente.Size = new System.Drawing.Size(141, 34);
+            this.chkPendente.TabIndex = 56;
+            this.chkPendente.Text = "Pendente";
+            this.chkPendente.UseVisualStyleBackColor = true;
+            this.chkPendente.CheckedChanged += new System.EventHandler(this.chkPendente_CheckedChanged);
             // 
             // pctSair
             // 
@@ -246,33 +259,20 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // chkPendente
-            // 
-            this.chkPendente.AutoSize = true;
-            this.chkPendente.Font = new System.Drawing.Font("Britannic Bold", 20.25F);
-            this.chkPendente.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.chkPendente.Location = new System.Drawing.Point(1032, 75);
-            this.chkPendente.Name = "chkPendente";
-            this.chkPendente.Size = new System.Drawing.Size(141, 34);
-            this.chkPendente.TabIndex = 56;
-            this.chkPendente.Text = "Pendente";
-            this.chkPendente.UseVisualStyleBackColor = true;
-            this.chkPendente.CheckedChanged += new System.EventHandler(this.chkPendente_CheckedChanged);
-            // 
             // frmPagamentoListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(55)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1230, 665);
-            this.Controls.Add(this.pnlFundoFuncionario);
+            this.Controls.Add(this.pnlFundoPagamento);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPagamentoListar";
             this.Text = "formulario_pagamento_listar";
             this.Load += new System.EventHandler(this.frmPagamentoListar_Load);
-            this.pnlFundoFuncionario.ResumeLayout(false);
-            this.pnlFundoFuncionario.PerformLayout();
+            this.pnlFundoPagamento.ResumeLayout(false);
+            this.pnlFundoPagamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -282,7 +282,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlFundoFuncionario;
+        private System.Windows.Forms.Panel pnlFundoPagamento;
         private System.Windows.Forms.PictureBox pctSair;
         private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.Label lblListarPagamento;

@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label5;
             this.pnlFuncoMenu = new System.Windows.Forms.Panel();
-            this.btnEstoque = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAjuda = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
-            this.btnVendas = new System.Windows.Forms.Button();
-            this.btnRelatorio = new System.Windows.Forms.Button();
-            this.btnProdutos = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnPagamento = new System.Windows.Forms.Button();
-            this.btnFuncionario = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRelatorioSemana = new System.Windows.Forms.Label();
             this.lblRelatorioMens = new System.Windows.Forms.Label();
@@ -60,15 +50,27 @@
             this.lblData = new System.Windows.Forms.Label();
             this.lblTurno = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.btnEstoque = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAjuda = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.btnVendas = new System.Windows.Forms.Button();
+            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.btnProdutos = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnPagamento = new System.Windows.Forms.Button();
+            this.btnFuncionario = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             label5 = new System.Windows.Forms.Label();
             this.pnlFuncoMenu.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlRelatorioDiario.SuspendLayout();
             this.pnlUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,16 +108,6 @@
             this.pnlFuncoMenu.Size = new System.Drawing.Size(1220, 655);
             this.pnlFuncoMenu.TabIndex = 0;
             // 
-            // btnEstoque
-            // 
-            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstoque.Image = global::pizzariaLeVelmont.Properties.Resources.btnEstoque;
-            this.btnEstoque.Location = new System.Drawing.Point(610, 302);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(198, 170);
-            this.btnEstoque.TabIndex = 23;
-            this.btnEstoque.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(108)))), ((int)(((byte)(97)))));
@@ -125,17 +117,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(603, 115);
             this.panel3.TabIndex = 22;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::pizzariaLeVelmont.Properties.Resources.fechar;
-            this.pictureBox1.Location = new System.Drawing.Point(552, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -147,106 +128,12 @@
             this.button1.Text = "Caixa";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnAjuda
-            // 
-            this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjuda.Image = global::pizzariaLeVelmont.Properties.Resources.btnAjuda;
-            this.btnAjuda.Location = new System.Drawing.Point(813, 480);
-            this.btnAjuda.Name = "btnAjuda";
-            this.btnAjuda.Size = new System.Drawing.Size(198, 170);
-            this.btnAjuda.TabIndex = 21;
-            this.btnAjuda.UseVisualStyleBackColor = true;
-            this.btnAjuda.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliente.Image = global::pizzariaLeVelmont.Properties.Resources.btnClientes;
-            this.btnCliente.Location = new System.Drawing.Point(1015, 302);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(198, 170);
-            this.btnCliente.TabIndex = 20;
-            this.btnCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnVendas
-            // 
-            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVendas.Image = global::pizzariaLeVelmont.Properties.Resources.btnVendas;
-            this.btnVendas.Location = new System.Drawing.Point(1015, 125);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(198, 170);
-            this.btnVendas.TabIndex = 19;
-            this.btnVendas.UseVisualStyleBackColor = true;
-            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
-            // 
-            // btnRelatorio
-            // 
-            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorio.Image = global::pizzariaLeVelmont.Properties.Resources.btnRelatorio;
-            this.btnRelatorio.Location = new System.Drawing.Point(812, 302);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(198, 170);
-            this.btnRelatorio.TabIndex = 18;
-            this.btnRelatorio.UseVisualStyleBackColor = true;
-            // 
-            // btnProdutos
-            // 
-            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.Image = global::pizzariaLeVelmont.Properties.Resources.btnProdutos;
-            this.btnProdutos.Location = new System.Drawing.Point(1015, 480);
-            this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(198, 170);
-            this.btnProdutos.TabIndex = 17;
-            this.btnProdutos.UseVisualStyleBackColor = true;
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmail.Image = global::pizzariaLeVelmont.Properties.Resources.btnEmail;
-            this.btnEmail.Location = new System.Drawing.Point(610, 480);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(198, 170);
-            this.btnEmail.TabIndex = 15;
-            this.btnEmail.UseVisualStyleBackColor = true;
-            // 
-            // btnPagamento
-            // 
-            this.btnPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagamento.Image = global::pizzariaLeVelmont.Properties.Resources.btnPagamentos;
-            this.btnPagamento.Location = new System.Drawing.Point(813, 126);
-            this.btnPagamento.Name = "btnPagamento";
-            this.btnPagamento.Size = new System.Drawing.Size(198, 170);
-            this.btnPagamento.TabIndex = 14;
-            this.btnPagamento.UseVisualStyleBackColor = true;
-            this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
-            // 
-            // btnFuncionario
-            // 
-            this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuncionario.Image = global::pizzariaLeVelmont.Properties.Resources.btnFuncionario;
-            this.btnFuncionario.Location = new System.Drawing.Point(610, 125);
-            this.btnFuncionario.Name = "btnFuncionario";
-            this.btnFuncionario.Size = new System.Drawing.Size(198, 170);
-            this.btnFuncionario.TabIndex = 13;
-            this.btnFuncionario.UseVisualStyleBackColor = true;
-            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
-            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(653, 334);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(0, 0);
             this.panel1.TabIndex = 9;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::pizzariaLeVelmont.Properties.Resources.btnCliente;
-            this.pictureBox2.Location = new System.Drawing.Point(868, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(0, 0);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // panel2
             // 
@@ -429,6 +316,122 @@
             this.lblUser.Text = "Usuário";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnEstoque
+            // 
+            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstoque.Image = global::pizzariaLeVelmont.Properties.Resources.btnEstoque;
+            this.btnEstoque.Location = new System.Drawing.Point(610, 302);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(198, 170);
+            this.btnEstoque.TabIndex = 23;
+            this.btnEstoque.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::pizzariaLeVelmont.Properties.Resources.fechar;
+            this.pictureBox1.Location = new System.Drawing.Point(552, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnAjuda
+            // 
+            this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjuda.Image = global::pizzariaLeVelmont.Properties.Resources.btnAjuda;
+            this.btnAjuda.Location = new System.Drawing.Point(813, 480);
+            this.btnAjuda.Name = "btnAjuda";
+            this.btnAjuda.Size = new System.Drawing.Size(198, 170);
+            this.btnAjuda.TabIndex = 21;
+            this.btnAjuda.UseVisualStyleBackColor = true;
+            this.btnAjuda.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Image = global::pizzariaLeVelmont.Properties.Resources.btnClientes;
+            this.btnCliente.Location = new System.Drawing.Point(1015, 302);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(198, 170);
+            this.btnCliente.TabIndex = 20;
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendas.Image = global::pizzariaLeVelmont.Properties.Resources.btnVendas;
+            this.btnVendas.Location = new System.Drawing.Point(1015, 125);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(198, 170);
+            this.btnVendas.TabIndex = 19;
+            this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
+            // 
+            // btnRelatorio
+            // 
+            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorio.Image = global::pizzariaLeVelmont.Properties.Resources.btnRelatorio;
+            this.btnRelatorio.Location = new System.Drawing.Point(812, 302);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(198, 170);
+            this.btnRelatorio.TabIndex = 18;
+            this.btnRelatorio.UseVisualStyleBackColor = true;
+            // 
+            // btnProdutos
+            // 
+            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdutos.Image = global::pizzariaLeVelmont.Properties.Resources.btnProdutos;
+            this.btnProdutos.Location = new System.Drawing.Point(1015, 480);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(198, 170);
+            this.btnProdutos.TabIndex = 17;
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmail.Image = global::pizzariaLeVelmont.Properties.Resources.btnEmail;
+            this.btnEmail.Location = new System.Drawing.Point(610, 480);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(198, 170);
+            this.btnEmail.TabIndex = 15;
+            this.btnEmail.UseVisualStyleBackColor = true;
+            // 
+            // btnPagamento
+            // 
+            this.btnPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagamento.Image = global::pizzariaLeVelmont.Properties.Resources.btnPagamentos;
+            this.btnPagamento.Location = new System.Drawing.Point(813, 126);
+            this.btnPagamento.Name = "btnPagamento";
+            this.btnPagamento.Size = new System.Drawing.Size(198, 170);
+            this.btnPagamento.TabIndex = 14;
+            this.btnPagamento.UseVisualStyleBackColor = true;
+            this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
+            // 
+            // btnFuncionario
+            // 
+            this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuncionario.Image = global::pizzariaLeVelmont.Properties.Resources.btnFuncionario;
+            this.btnFuncionario.Location = new System.Drawing.Point(610, 125);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(198, 170);
+            this.btnFuncionario.TabIndex = 13;
+            this.btnFuncionario.UseVisualStyleBackColor = true;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::pizzariaLeVelmont.Properties.Resources.btnCliente;
+            this.pictureBox2.Location = new System.Drawing.Point(868, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(0, 0);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // pctLogo
             // 
             this.pctLogo.Image = global::pizzariaLeVelmont.Properties.Resources.Le_Velmont;
@@ -437,6 +440,10 @@
             this.pctLogo.Size = new System.Drawing.Size(250, 150);
             this.pctLogo.TabIndex = 0;
             this.pctLogo.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMenuPrincipal
             // 
@@ -451,11 +458,11 @@
             this.Text = "Menu";
             this.pnlFuncoMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnlRelatorioDiario.ResumeLayout(false);
             this.pnlUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -495,5 +502,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEstoque;
+        private System.Windows.Forms.Timer timer1;
     }
 }
