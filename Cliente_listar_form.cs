@@ -17,12 +17,19 @@ namespace pizzariaLeVelmont
             InitializeComponent();
         }
 
+        private void frmClientelistar_Load(object sender, EventArgs e)
+        {
+            
+            banco.dgCliente = dgvCliente;
+            banco.CarregarCliente();
+        }
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codCliente = Convert.ToInt32(dgvCliente[0, variaveis.linhaSelecionada].Value);
+              
             }
         }
 
@@ -74,11 +81,13 @@ namespace pizzariaLeVelmont
 
             if (txtNomeCliente.Text == "")
             {
-                chkAtivo.Checked = true;
+                chkAtivo.Enabled = true;
+                chkPendente.Enabled = true;
             }
             else
             {
-                chkAtivo.Checked = false;
+                chkAtivo.Enabled = false;
+                chkPendente.Enabled = false;
             }
         }
 
@@ -88,26 +97,32 @@ namespace pizzariaLeVelmont
             {
                 banco.CarregarStatusCliente();
                 txtNomeCliente.Enabled = false;
+                chkPendente.Enabled = false;
             }
             else
             {
-                banco.CarregarStatusCliente();
+                banco.CarregarCliente();
                 txtNomeCliente.Enabled = true;
+                chkPendente.Enabled = true;
             }
         }
 
         private void chkPendente_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkAtivo.Checked == true)
+            if (chkPendente.Checked == true)
             {
                 banco.CarregarStatusPendente();
                 txtNomeCliente.Enabled = false;
+                chkAtivo.Enabled = false;
             }
             else
             {
-                banco.CarregarStatusPendente();
+                banco.CarregarCliente();
                 txtNomeCliente.Enabled = true;
+                chkAtivo.Enabled = true;
             }
         }
+
+      
     }
 }

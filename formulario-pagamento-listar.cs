@@ -25,23 +25,27 @@ namespace pizzariaLeVelmont
 
         private void frmPagamentoListar_Load(object sender, EventArgs e)
         {
-            banco.dgPagamento = dgvPagamento;
+            banco.dgPagamento = dgvPagamento; 
             banco.CarregarPagamento();
         }
 
         //TRAS O ID DOS CLIENTES
         private void txtNomePagamento_TextChanged(object sender, EventArgs e)
         {
-            variaveis.nomeCliente = txtNomePagamento.Text;
+            variaveis.pagamentoPendCliente = txtNomePagamento.Text; 
+            
             banco.CarregarPagamentoNome(); // CARREGAR O NOME DO CLIENTE
 
             if (txtNomePagamento.Text == "")
             {
                 chkAtivo.Enabled = true;
+                chkPendente.Enabled = true;
+
             }
             else
             {
                 chkAtivo.Enabled = false;
+                chkPendente.Enabled = false;
             }
         }
 
@@ -52,11 +56,13 @@ namespace pizzariaLeVelmont
             {
                 banco.CarregarPagamentoStatus();
                 txtNomePagamento.Enabled = false;
+                chkPendente.Enabled = false;
             }
             else
             {
-                banco.CarregarPagamentoStatus();
+                banco.CarregarPagamento();
                 txtNomePagamento.Enabled = true;
+                chkPendente.Enabled = true;
             }
         }
 
@@ -67,11 +73,13 @@ namespace pizzariaLeVelmont
             {
                 banco.CarregarPagamentoStatusPendente();
                 txtNomePagamento.Enabled = false;
+                chkAtivo.Enabled = false;
             }
             else
             {
-                banco.CarregarPagamentoStatusPendente();
+                banco.CarregarPagamento();
                 txtNomePagamento.Enabled = true;
+                chkAtivo.Enabled = true;
             }
         }
 

@@ -294,14 +294,14 @@ namespace pizzariaLeVelmont
         //SEÇÃO PAGAMENTO //
 
         //CARREGAR PAGAMENTO 
-
+        //LISTA
         public static void CarregarPagamento()
         {
             try
             {
                 conexao.Conectar();
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente\r\nFROM tblpagamento\r\nINNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente\r\n\r\nWHERE tblcliente.nomeCliente LIKE '%\"+variaveis.nomeCliente+\"%'\r\nORDER BY tblcliente.nomeCliente\r\n";
+                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente\r\nFROM tblpagamento\r\nINNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente ORDER BY tblcliente.nomeCliente\r\n";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -327,6 +327,7 @@ namespace pizzariaLeVelmont
 
         }
 
+        
         //RESPONSAVEL DE LISTAR OS ID 
         public static void CarregarPagamentoNome()
         {
@@ -763,6 +764,7 @@ namespace pizzariaLeVelmont
 
 
     //SEÇÃO ESTOQUE //
+
     public static void CarregarEstoque()
     {
         try
@@ -1008,7 +1010,6 @@ namespace pizzariaLeVelmont
             MessageBox.Show("Erro ao alterar estoque!\n\n" + erro.Message, "ERRO");
         }
     }
-
 
 
 
