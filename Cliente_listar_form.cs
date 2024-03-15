@@ -19,7 +19,7 @@ namespace pizzariaLeVelmont
 
         private void frmClientelistar_Load(object sender, EventArgs e)
         {
-            
+
             banco.dgCliente = dgvCliente;
             banco.CarregarCliente();
         }
@@ -29,7 +29,7 @@ namespace pizzariaLeVelmont
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codCliente = Convert.ToInt32(dgvCliente[0, variaveis.linhaSelecionada].Value);
-              
+                MessageBox.Show(variaveis.codCliente.ToString());
             }
         }
 

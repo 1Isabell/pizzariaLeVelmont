@@ -26,9 +26,10 @@ namespace pizzariaLeVelmont
 
 
         //Estoque - VANZELLI
-        public static int codEstoque;
-        public static string nomeEstoque, quantidadeEstoque, preçoEstoque, fornecedorEstoque,categoriaEstoque, statusEstoque;
+        public static int codEstoque, quantidadeEstoque, preçoEstoque;
+        public static string nomeEstoque, fornecedorEstoque,categoriaEstoque, statusEstoque;
         public static DateTime dataValidadeEstoque;
+        
 
 
         //PAGAMENTOS - ISABELLA

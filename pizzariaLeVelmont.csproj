@@ -110,6 +110,18 @@
       <DependentUpon>Cliente_listar_form.cs</DependentUpon>
     </Compile>
     <Compile Include="conexao.cs" />
+    <Compile Include="Estoque-Cadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque-Cadastrar.Designer.cs">
+      <DependentUpon>Estoque-Cadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque-Listar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque-Listar.Designer.cs">
+      <DependentUpon>Estoque-Listar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     <Compile Include="variaveis.cs" />
     <EmbeddedResource Include="Cliente_listar_form.resx">
       <DependentUpon>Cliente_listar_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque-Cadastrar.resx">
+      <DependentUpon>Estoque-Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque-Listar.resx">
+      <DependentUpon>Estoque-Listar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
