@@ -337,7 +337,7 @@ namespace pizzariaLeVelmont
 
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
                 //COMO TRAZER O NOME DO CLIENTE NO LUGAR DO IR
-                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente FROM tblpagamento INNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente WHERE tblcliente.nomeCliente LIKE '%\"+variaveis.nomeCliente+\"%' ORDER BY tblcliente.nomeCliente;";
+                string selecionar = "SELECT tblpagamento.* ,tblcliente.nomeCliente FROM tblpagamento INNER JOIN tblcliente ON tblpagamento.idCliente = tblcliente.idCliente WHERE tblcliente.nomeCliente LIKE '%"+variaveis.nomeCliente+"%' ORDER BY tblcliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -550,7 +550,7 @@ namespace pizzariaLeVelmont
             {
                 conexao.Conectar();
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT * FROM tblcliente WHERE nomeCliente LIKE '%\"+variaveis.nomeInstrutor+\"%' ORDER BY nomeCliente;";
+                string selecionar = "SELECT * FROM tblcliente WHERE nomeCliente LIKE '%"+variaveis.nomeCliente+"%' ORDER BY nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -688,12 +688,12 @@ namespace pizzariaLeVelmont
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
-                {
+                {                    
                     variaveis.nomeCliente = reader.GetString(1);
                     variaveis.dataNascimentoC = reader.GetDateTime(2);
                     variaveis.telefoneClinte = reader.GetString(3);
                     variaveis.enderecoCliente = reader.GetString(4);
-                    variaveis.pagamentoPendCliente = reader.GetString(5);
+                    variaveis.pagamentoPendCliente = reader.GetInt32(5);
                     variaveis.statusCliente = reader.GetString(6);
                 }
                 conexao.Desconectar();
@@ -720,7 +720,7 @@ namespace pizzariaLeVelmont
                 variaveis.dataNascimentoC = reader.GetDateTime(2);
                 variaveis.telefoneClinte = reader.GetString(3);
                 variaveis.enderecoCliente = reader.GetString(4);
-                variaveis.pagamentoPendCliente = reader.GetString(5);
+                variaveis.pagamentoPendCliente = reader.GetInt32(5);
                 variaveis.statusCliente = reader.GetString(6);
             }
             conexao.Desconectar();

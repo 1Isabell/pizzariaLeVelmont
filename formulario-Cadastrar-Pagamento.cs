@@ -19,25 +19,46 @@ namespace pizzariaLeVelmont
 
         private void pctSair_Click(object sender, EventArgs e)
         {
-            var resposta = MessageBox.Show("Deseja Encerrar?", "ENCERRAR", MessageBoxButtons.YesNo);
-            if (resposta == DialogResult.Yes)
+            new frmPagamentoListar().Show();
+            Close();
+        }
+
+        private void frmCadastrarPagamento_Load(object sender, EventArgs e)
+        {
+            if (variaveis.funcao == "ALTERAR")
             {
-                Application.Exit();
+                lblCadastrarPagamento.Text = "Alterar Informações do Pagamento";
+                banco.CarregarDadosPagamento();
+                txtidPagamento.Text = variaveis.CodPagamento.ToString(); ;
+                txtNomeCliente.Text = variaveis.nomeCliente;
+                txtPagamento.Text = variaveis.precoPagamento.ToString();
+                cmbTipoPagamento.Text = variaveis.tipoPagamento;
+                cmbStatus.Text = variaveis.statusEstoque;
+                btnAlterar.Text = "ALTERAR";
+
+
+                txtidPagamento.Enabled = true;
+                txtNomeCliente.Enabled = true;
+                txtPagamento.Enabled = true;
+                cmbTipoPagamento.Enabled = true;
+                cmbStatus.Enabled = true;
+                cmbStatus.Enabled = true;
+                btnAlterar.Enabled = true;
+                btnLimpar.Enabled = false;
+
+
+
+            }
+            else if (variaveis.funcao == "CADASTRAR")
+            {
+                lblidPagamento = 
             }
         }
 
-        
-
-       
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private void btnAlterar_Click(object sender, EventArgs e)
         {
 
         }
     }
+    
 }

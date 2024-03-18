@@ -100,7 +100,7 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.chkAtivo.Location = new System.Drawing.Point(885, 75);
+            this.chkAtivo.Location = new System.Drawing.Point(821, 77);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(91, 34);
             this.chkAtivo.TabIndex = 53;

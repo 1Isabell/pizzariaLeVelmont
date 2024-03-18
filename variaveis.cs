@@ -38,8 +38,8 @@ namespace pizzariaLeVelmont
 
         //CLIENTE -ISABELLA
 
-        public static int codCliente;
-        public static string nomeCliente, telefoneClinte, enderecoCliente,pagamentoPendCliente, statusCliente;
+        public static int codCliente,pagamentoPendCliente;
+        public static string nomeCliente, telefoneClinte, enderecoCliente, statusCliente;
         public static DateTime dataNascimentoC;
 
 
