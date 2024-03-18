@@ -1012,49 +1012,362 @@ namespace pizzariaLeVelmont
 
 
 
+
+
+
+        // Produto Maycon
+        public static void CarregarProduto()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM tblproduto ORDER BY nomeProduto AND statusProduto = 'ATIVO';";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgProduto.DataSource = dt;
+                dgProduto.Columns[0].Visible = false; //ID
+                dgProduto.Columns[1].HeaderText = "Nome";
+                dgProduto.Columns[2].HeaderText = "Tipo";
+                dgProduto.Columns[3].HeaderText = "Descrição";
+                dgProduto.Columns[4].HeaderText = "Categoria";
+                dgProduto.Columns[5].HeaderText = "Preço";
+                dgProduto.Columns[6].Visible = false;
+                dgProduto.Columns[7].HeaderText = "Status";
+
+
+                dgProduto.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar produto!\n\n" + erro);
+            }
+        } //Carregar Informações
+
+        public static void CarregarProdutoNome()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM tblproduto WHERE nomeProduto Like '%" + variaveis.nomeProduto + "%' ORDER BY nomeProduto;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgProduto.DataSource = dt;
+                dgProduto.Columns[0].Visible = false; //ID
+                dgProduto.Columns[1].HeaderText = "Nome";
+                dgProduto.Columns[2].HeaderText = "Tipo";
+                dgProduto.Columns[3].HeaderText = "Descrição";
+                dgProduto.Columns[4].HeaderText = "Categoria";
+                dgProduto.Columns[5].HeaderText = "Preço";
+                dgProduto.Columns[6].Visible = false;
+                dgProduto.Columns[7].HeaderText = "Status";
+
+
+                dgProduto.ClearSelection();
+
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar Produtos!\n\n" + erro);
+            }
+        }  //Carregar Informações Focada no Nome
+
+        public static void CarregarProdutoStatusAtivo()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM `tblproduto`  WHERE statusProduto = 'ATIVO' ORDER BY nomeProduto;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgProduto.DataSource = dt;
+                dgProduto.Columns[0].Visible = false; //ID
+                dgProduto.Columns[1].HeaderText = "Nome";
+                dgProduto.Columns[2].HeaderText = "Tipo";
+                dgProduto.Columns[3].HeaderText = "Descrição";
+                dgProduto.Columns[4].HeaderText = "Categoria";
+                dgProduto.Columns[5].HeaderText = "Preço";
+                dgProduto.Columns[6].Visible = false;
+                dgProduto.Columns[7].HeaderText = "Status";
+
+
+                dgProduto.ClearSelection();
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Produtos!\n\n" + erro);
+            }
+        } //Status Ativo
+
+        public static void CarregarProdutoStatusDesativo()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM `tblproduto`  WHERE statusProduto = 'DESATIVADO' ORDER BY nomeProduto;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgProduto.DataSource = dt;
+                dgProduto.Columns[0].Visible = false; //ID
+                dgProduto.Columns[1].HeaderText = "Nome";
+                dgProduto.Columns[2].HeaderText = "Tipo";
+                dgProduto.Columns[3].HeaderText = "Descrição";
+                dgProduto.Columns[4].HeaderText = "Categoria";
+                dgProduto.Columns[5].HeaderText = "Preço";
+                dgProduto.Columns[6].Visible = false;
+                dgProduto.Columns[7].HeaderText = "Status";
+
+
+                dgProduto.ClearSelection();
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Produto!\n\n" + erro);
+            }
+        } //Status Desativo
+
+        public static void CarregarProdutoTipo()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM tblproduto WHERE tipoProduto Like '%" + variaveis.tipoProduto + "%' ORDER BY nomeProduto;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgProduto.DataSource = dt;
+                dgProduto.Columns[0].Visible = false; //ID
+                dgProduto.Columns[1].HeaderText = "Nome";
+                dgProduto.Columns[2].HeaderText = "Tipo";
+                dgProduto.Columns[3].HeaderText = "Descrição";
+                dgProduto.Columns[4].HeaderText = "Categoria";
+                dgProduto.Columns[5].HeaderText = "Preço";
+                dgProduto.Columns[6].Visible = false;
+                dgProduto.Columns[7].HeaderText = "Status";
+
+
+                dgProduto.ClearSelection();
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os Produtos!\n\n" + erro);
+            }
+        } //Status Ativo
+
+        public static void DesativarProduto()
+        {
+            try
+            {
+                conexao.Conectar();
+                string alterar = "UPDATE tblproduto SET statusProduto= 'DESATIVADO' WHERE idProduto=@codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
+                cmd.Parameters.AddWithValue("@status", variaveis.statusProduto);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codProduto);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto desativado com sucesso!", "EXCLUIR DO PRODUTO");
+                conexao.Desconectar();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao desativar produto!\n\n" + erro.Message, "ERRO");
+            }
+        } //Desativar
+
+        public static void CarregarDadosProduto()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT * FROM tblproduto WHERE idProduto = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                cmd.Parameters.AddWithValue("codigo", variaveis.codProduto);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variaveis.nomeProduto = reader.GetString(1);
+                    variaveis.tipoProduto = reader.GetString(2);
+                    variaveis.descricaoProduto = reader.GetString(3);
+                    variaveis.categoriaProduto = reader.GetString(4);
+                    variaveis.precoProduto = reader.GetInt32(5);
+                    variaveis.statusProduto = reader.GetString(7);
+
+
+
+                }
+                conexao.Desconectar();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Eroo ao carregar os dados do produto!\n\n" + erro);
+            }
+        }//Carregar
+
+        public static void InserirProduto()
+        {
+            try
+            {
+                conexao.Conectar();
+                string inserir = "INSERT INTO tblproduto(nomeProduto, tipoProduto, descricaoProduto, categoriaProduto, precoProdutoUnitario, statusProduto) VALUES (@nome,@tipo,@descricao,@categoria,@preco,@status);";
+                MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
+
+                //parametros
+                cmd.Parameters.AddWithValue("@nome", variaveis.nomeProduto);
+                cmd.Parameters.AddWithValue("@tipo", variaveis.tipoProduto);
+                cmd.Parameters.AddWithValue("@descricao", variaveis.descricaoProduto);
+                cmd.Parameters.AddWithValue("@categoria", variaveis.categoriaProduto);
+                cmd.Parameters.AddWithValue("@preco", variaveis.precoProduto);
+                cmd.Parameters.AddWithValue("@status", variaveis.statusProduto);
+               
+
+
+                //cmd parametros
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto cadastrado com sucesso!", "CADASTRO PRODUTO");
+                conexao.Desconectar();
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao cadastrar produto!\n\n" + erro.Message, "ERRO");
+            }
+
+
+        } //Cadastrar
+
+        public static void AlterarProduto()
+        {
+            try
+            {
+                conexao.Conectar();
+                string alterar = "UPDATE tblproduto SET nomeProduto=@nome,tipoProduto=@tipo,descricaoProduto=@descricao,categoriaProduto=@categoria,precoProdutoUnitario=@preco,statusProduto=@status WHERE idProduto=@codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
+                //parametros
+                cmd.Parameters.AddWithValue("@nome", variaveis.nomeProduto);
+                cmd.Parameters.AddWithValue("@tipo", variaveis.tipoProduto);
+                cmd.Parameters.AddWithValue("@descricao", variaveis.descricaoProduto);
+                cmd.Parameters.AddWithValue("@categoria", variaveis.categoriaProduto);
+                cmd.Parameters.AddWithValue("@preco", variaveis.precoProduto);
+                cmd.Parameters.AddWithValue("@status", variaveis.statusProduto);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codProduto);
+
+
+                //cmd parametros
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto alterado com sucesso!", "ALTERAÇÃO DO Produto");
+                conexao.Desconectar();
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao alterar produto!\n\n" + erro.Message, "ERRO");
+            }
+        } //Alterar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

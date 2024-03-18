@@ -202,6 +202,7 @@
             this.btnProdutos.Size = new System.Drawing.Size(198, 170);
             this.btnProdutos.TabIndex = 17;
             this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // btnEmail
             // 

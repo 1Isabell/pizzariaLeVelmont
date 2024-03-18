@@ -61,7 +61,7 @@
             // 
             this.lblNome.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblNome.Location = new System.Drawing.Point(80, 13);
+            this.lblNome.Location = new System.Drawing.Point(51, 13);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(157, 32);
             this.lblNome.TabIndex = 1;
@@ -71,12 +71,12 @@
             // txtNome
             // 
             this.txtNome.BackColor = System.Drawing.Color.White;
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
             this.txtNome.Location = new System.Drawing.Point(85, 48);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(867, 24);
+            this.txtNome.Size = new System.Drawing.Size(867, 31);
             this.txtNome.TabIndex = 0;
             // 
             // lblDataNasc
@@ -94,7 +94,7 @@
             // 
             this.lblCPF.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblCPF.Location = new System.Drawing.Point(177, 165);
+            this.lblCPF.Location = new System.Drawing.Point(80, 166);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(95, 32);
             this.lblCPF.TabIndex = 44;
@@ -104,19 +104,19 @@
             // txtCPF
             // 
             this.txtCPF.BackColor = System.Drawing.Color.White;
-            this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
             this.txtCPF.Location = new System.Drawing.Point(85, 201);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(272, 24);
+            this.txtCPF.Size = new System.Drawing.Size(272, 31);
             this.txtCPF.TabIndex = 43;
             // 
             // lblNivel
             // 
             this.lblNivel.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNivel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblNivel.Location = new System.Drawing.Point(608, 264);
+            this.lblNivel.Location = new System.Drawing.Point(556, 264);
             this.lblNivel.Name = "lblNivel";
             this.lblNivel.Size = new System.Drawing.Size(88, 32);
             this.lblNivel.TabIndex = 48;
@@ -127,7 +127,7 @@
             // 
             this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblStatus.Location = new System.Drawing.Point(810, 264);
+            this.lblStatus.Location = new System.Drawing.Point(774, 264);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(88, 32);
             this.lblStatus.TabIndex = 54;
@@ -138,7 +138,7 @@
             // 
             this.lblTelefone.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblTelefone.Location = new System.Drawing.Point(721, 165);
+            this.lblTelefone.Location = new System.Drawing.Point(650, 165);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(137, 32);
             this.lblTelefone.TabIndex = 58;
@@ -149,7 +149,7 @@
             // 
             this.lblTurno.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblTurno.Location = new System.Drawing.Point(123, 264);
+            this.lblTurno.Location = new System.Drawing.Point(81, 264);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(94, 32);
             this.lblTurno.TabIndex = 60;
@@ -160,7 +160,7 @@
             // 
             this.lblEmail.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblEmail.Location = new System.Drawing.Point(80, 85);
+            this.lblEmail.Location = new System.Drawing.Point(51, 85);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(157, 32);
             this.lblEmail.TabIndex = 62;
@@ -170,12 +170,12 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
             this.txtEmail.Location = new System.Drawing.Point(85, 120);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(867, 24);
+            this.txtEmail.Size = new System.Drawing.Size(867, 31);
             this.txtEmail.TabIndex = 63;
             // 
             // cmbNivel
@@ -211,7 +211,7 @@
             // 
             this.lblFuncao.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFuncao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblFuncao.Location = new System.Drawing.Point(345, 264);
+            this.lblFuncao.Location = new System.Drawing.Point(302, 264);
             this.lblFuncao.Name = "lblFuncao";
             this.lblFuncao.Size = new System.Drawing.Size(108, 32);
             this.lblFuncao.TabIndex = 69;

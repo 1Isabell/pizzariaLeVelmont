@@ -41,5 +41,13 @@ namespace pizzariaLeVelmont
         public static int codCliente;
         public static string nomeCliente, telefoneClinte, enderecoCliente,pagamentoPendCliente, statusCliente;
         public static DateTime dataNascimentoC;
+
+
+        // Produto Maycon
+        public static int codProduto, precoProduto;
+        public static string nomeProduto, tipoProduto, descricaoProduto, categoriaProduto, statusProduto;
+
     }
+
+
 }

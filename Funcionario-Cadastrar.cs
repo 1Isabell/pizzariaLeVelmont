@@ -23,6 +23,7 @@ namespace pizzariaLeVelmont
             if (variaveis.funcao == "ALTERAR")
             {
                 lblFuncionario.Text = "Alterar Informações do Funcionário";
+                btnCadastrar.Text = "ALTERAR";
                 banco.CarregarDadosFuncionario();
                 txtNome.Text = variaveis.nomeFuncionario;
                 txtEmail.Text = variaveis.emailFuncionario;
@@ -75,7 +76,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor colocar o nome completo");
                 txtNome.Clear();
                 txtNome.Focus();
-                lblNome.ForeColor = Color.Yellow;
+                lblNome.ForeColor = Color.Red;
             } //Nome
 
 
@@ -84,7 +85,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor colocar o cargo");
                 txtEmail.Clear();
                 txtEmail.Focus();
-                lblEmail.ForeColor = Color.Yellow;
+                lblEmail.ForeColor = Color.Red;
             } //Email
 
 
@@ -93,7 +94,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor colocar email");
                 txtCPF.Clear();
                 txtCPF.Focus();
-                lblCPF.ForeColor = Color.Yellow;
+                lblCPF.ForeColor = Color.Red;
             } //CPF
 
 
@@ -102,7 +103,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor colocar data de nascimento completa ");
                 mtbDataNasc.Clear();
                 mtbDataNasc.Focus();
-                lblDataNasc.ForeColor = Color.Yellow;
+                lblDataNasc.ForeColor = Color.Red;
             } //Data Nascimeto
 
 
@@ -111,7 +112,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor colocar telefone completa ");
                 mkbTelefone.Clear();
                 mkbTelefone.Focus();
-                lblTelefone.ForeColor = Color.Yellow;
+                lblTelefone.ForeColor = Color.Red;
             } //Telefone
 
 
@@ -120,7 +121,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor selecionar especialidade");
                 cmbTurno.SelectedIndex = -1;
                 cmbTurno.Focus();
-                lblTurno.ForeColor = Color.Yellow;
+                lblTurno.ForeColor = Color.Red;
             } //Turno
 
 
@@ -129,7 +130,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor selecionar status");
                 cmbFuncao.SelectedIndex = -1;
                 cmbFuncao.Focus();
-                lblFuncao.ForeColor = Color.Yellow;
+                lblFuncao.ForeColor = Color.Red;
             } //Função
 
 
@@ -138,7 +139,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor selecionar nível");
                 cmbNivel.SelectedIndex = -1;
                 cmbNivel.Focus();
-                lblNivel.ForeColor = Color.Yellow;
+                lblNivel.ForeColor = Color.Red;
             } //Nível
 
 
@@ -147,7 +148,7 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Favor selecionar status");
                 cmbStatus.SelectedIndex = -1;
                 cmbStatus.Focus();
-                lblStatus.ForeColor = Color.Yellow;
+                lblStatus.ForeColor = Color.Red;
             } //Status
 
 

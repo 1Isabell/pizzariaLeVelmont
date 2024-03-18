@@ -75,5 +75,11 @@ namespace pizzariaLeVelmont
             new Estoque_Listar().Show();
             Hide();
         }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            new Produto_Listar().Show();
+            Hide();
+        }
     }
 }
