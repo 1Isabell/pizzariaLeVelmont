@@ -38,12 +38,12 @@
             this.lblPreçoPagamento = new System.Windows.Forms.Label();
             this.cmbTipoPagamento = new System.Windows.Forms.ComboBox();
             this.lblidCliente = new System.Windows.Forms.Label();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.lblTipoPagamento = new System.Windows.Forms.Label();
             this.lblidPagamento = new System.Windows.Forms.Label();
             this.txtidPagamento = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbNomeCliente = new System.Windows.Forms.ComboBox();
             this.pnlFuncionario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
             this.pnlCadastro.SuspendLayout();
@@ -121,11 +121,11 @@
             // pnlCadastro
             // 
             this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
+            this.pnlCadastro.Controls.Add(this.cmbNomeCliente);
             this.pnlCadastro.Controls.Add(this.txtPagamento);
             this.pnlCadastro.Controls.Add(this.lblPreçoPagamento);
             this.pnlCadastro.Controls.Add(this.cmbTipoPagamento);
             this.pnlCadastro.Controls.Add(this.lblidCliente);
-            this.pnlCadastro.Controls.Add(this.txtNomeCliente);
             this.pnlCadastro.Controls.Add(this.lblTipoPagamento);
             this.pnlCadastro.Controls.Add(this.lblidPagamento);
             this.pnlCadastro.Controls.Add(this.txtidPagamento);
@@ -187,17 +187,6 @@
             this.lblidCliente.Text = " Nome do Cliente:";
             this.lblidCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtNomeCliente
-            // 
-            this.txtNomeCliente.BackColor = System.Drawing.Color.White;
-            this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtNomeCliente.Location = new System.Drawing.Point(161, 158);
-            this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(750, 31);
-            this.txtNomeCliente.TabIndex = 4;
-            // 
             // lblTipoPagamento
             // 
             this.lblTipoPagamento.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,6 +244,17 @@
             this.cmbStatus.Size = new System.Drawing.Size(202, 31);
             this.cmbStatus.TabIndex = 76;
             // 
+            // cmbNomeCliente
+            // 
+            this.cmbNomeCliente.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNomeCliente.FormattingEnabled = true;
+            this.cmbNomeCliente.ItemHeight = 23;
+            this.cmbNomeCliente.Location = new System.Drawing.Point(161, 158);
+            this.cmbNomeCliente.Name = "cmbNomeCliente";
+            this.cmbNomeCliente.Size = new System.Drawing.Size(750, 31);
+            this.cmbNomeCliente.TabIndex = 77;
+            this.cmbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cmbNomeCliente_SelectedIndexChanged);
+            // 
             // frmCadastrarPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,9 +288,9 @@
         private System.Windows.Forms.Label lblidPagamento;
         private System.Windows.Forms.TextBox txtidPagamento;
         private System.Windows.Forms.Label lblidCliente;
-        private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.ComboBox cmbTipoPagamento;
         private System.Windows.Forms.TextBox txtPagamento;
         private System.Windows.Forms.Label lblPreçoPagamento;
+        private System.Windows.Forms.ComboBox cmbNomeCliente;
     }
 }

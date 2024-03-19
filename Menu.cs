@@ -66,7 +66,7 @@ namespace pizzariaLeVelmont
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            new frmClientelistar ().Show();
+            new frmClientelistar().Show();
             Hide();
         }
 

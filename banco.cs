@@ -467,7 +467,7 @@ namespace pizzariaLeVelmont
                 {
                     variaveis.statusPagamento = reader.GetString(1);
                     variaveis.tipoPagamento = reader.GetString(2);
-                    variaveis.precoPagamento = reader.GetString(3);
+                    variaveis.precoPagamento = reader.GetInt32(3);
                     variaveis.nomeCliente = reader.GetString(4);
                 }
                 conexao.Desconectar();
@@ -505,6 +505,35 @@ namespace pizzariaLeVelmont
             }
         }
 
+        public static ComboBox cmbNomeCliente;
+        public static void CarregarClienteCombo()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT idCliente, nomeCliente FROM tblcliente ORDER BY nomeCliente";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cmbNomeCliente.DataSource = dt;
+                cmbNomeCliente.DisplayMember = "nomeCliente";
+                cmbNomeCliente.ValueMember = "idCliente";
+                cmbNomeCliente.SelectedIndex = -1;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar os nomes clientes!\n\n" + erro);
+            }   
+        }
+
+
+
+
+
+
+
+
 
         //SEÇÃO CLIENTE//
 
@@ -513,11 +542,10 @@ namespace pizzariaLeVelmont
         public static void CarregarCliente()
         {
             try
-            { 
-
+            {
                 conexao.Conectar();
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT * FROM tblcliente;";
+                string selecionar = "SELECT * FROM tblcliente ORDER BY nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -525,7 +553,7 @@ namespace pizzariaLeVelmont
 
                 dgCliente.DataSource = dt;
 
-                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[0].HeaderText = "ID Cliente";
                 dgCliente.Columns[1].HeaderText = "Nome";
                 dgCliente.Columns[2].HeaderText = "Data de Nascimento";
                 dgCliente.Columns[3].HeaderText = "Telefone";
@@ -535,12 +563,14 @@ namespace pizzariaLeVelmont
 
                 dgCliente.ClearSelection();
 
+
                 conexao.Desconectar();
             }
-            catch (Exception erro) 
+            catch (Exception erro)
             {
-                MessageBox.Show("Erro ao carregar o Cliente!\n\n" + erro);
+                MessageBox.Show("Erro ao carregar os Clientes!\n\n" + erro);
             }
+
         }
 
 
@@ -558,7 +588,7 @@ namespace pizzariaLeVelmont
 
                 dgCliente.DataSource= dt;
 
-                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[0].HeaderText = "ID Cliente";
                 dgCliente.Columns[1].HeaderText = "Nome";
                 dgCliente.Columns[2].HeaderText = "Data de Nascimento";
                 dgCliente.Columns[3].HeaderText = "Telefone";
@@ -583,7 +613,7 @@ namespace pizzariaLeVelmont
             {
                 conexao.Conectar();
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT nomeCliente, statusCliente FROM tblcliente WHERE statusCliente = 'ATIVO' ORDER BY nomeCliente;";
+                string selecionar = "SELECT * FROM tblcliente WHERE statusCliente = 'ATIVO' ORDER BY nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -591,9 +621,9 @@ namespace pizzariaLeVelmont
 
                 dgCliente.DataSource = dt; //objeto não encontrado
 
-                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[0].HeaderText = "ID Cliente";
                 dgCliente.Columns[1].HeaderText = "Nome";
-                dgCliente.Columns[2].HeaderText = "Data de Nascimento";
+                dgCliente.Columns[2].HeaderText = "Data de Nascimento"; //
                 dgCliente.Columns[3].HeaderText = "Telefone";
                 dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
                 dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
@@ -620,7 +650,7 @@ namespace pizzariaLeVelmont
             {
                 conexao.Conectar();
                 //ONDE MUDAMOS SOMENTE O CODIGO SELECTE
-                string selecionar = "SELECT nomeCliente, statusCliente, pagamentosPendentes FROM tblcliente WHERE statusCliente = 'ATIVO' ORDER BY nomeCliente;";
+                string selecionar = "SELECT * FROM tblcliente WHERE statusCliente = 'PENDENTE' ORDER BY nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -682,10 +712,10 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                conexao.Conectar();
-                string selecionar = "SELECT * FROM tblcliente WHERE idCliente = codCliente;";
+              
+                string selecionar = "SELECT * FROM tblcliente WHERE idCliente = @codCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
-                cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
+                cmd.Parameters.AddWithValue("codCliente", variaveis.codCliente);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {                    
@@ -707,28 +737,7 @@ namespace pizzariaLeVelmont
 
     public static void AlterarCliente()
     {
-        try
-        {  conexao.Conectar();
-           
-            string selecionar = "UPDATE `tblcliente` SET nomeCliente = @nomeCliente, dataNascCliente = @dataNascimentoC, telefoneCliente = @telefoneCliente,enderecoCliente= @enderecoCliente, pagamentosPendentes= @pagamentoPendCliente, statusCliente = @statusCliente WHERE idCliente = codCliente;";
-            MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
-            cmd.Parameters.AddWithValue("@codigo", variaveis.codCliente);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                variaveis.nomeCliente = reader.GetString(1);
-                variaveis.dataNascimentoC = reader.GetDateTime(2);
-                variaveis.telefoneClinte = reader.GetString(3);
-                variaveis.enderecoCliente = reader.GetString(4);
-                variaveis.pagamentoPendCliente = reader.GetInt32(5);
-                variaveis.statusCliente = reader.GetString(6);
-            }
-            conexao.Desconectar();
-        }
-        catch (Exception erro)
-        {
-            MessageBox.Show("Erro ao carregar os dados do cliente!\n\n" + erro);
-        }
+            ///
     }
     
         //DESATIVAR 

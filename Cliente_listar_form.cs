@@ -19,17 +19,36 @@ namespace pizzariaLeVelmont
 
         private void frmClientelistar_Load(object sender, EventArgs e)
         {
-
             banco.dgCliente = dgvCliente;
             banco.CarregarCliente();
+        }
+
+        private void txtNomeCliente_TextChanged(object sender, EventArgs e)
+        {
+
+            variaveis.nomeCliente = txtNomeCliente.Text;
+
+            banco.CarregarCliente(); // CARREGAR O NOME DO CLIENTE
+
+            if (txtNomeCliente.Text == "")
+            {
+                chkAtivo.Enabled = true;
+                chkPendente.Enabled = true;
+
+            }
+            else
+            {
+                chkAtivo.Enabled = false;
+                chkPendente.Enabled = false;
+            }
         }
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codCliente = Convert.ToInt32(dgvCliente[0, variaveis.linhaSelecionada].Value);
-                MessageBox.Show(variaveis.codCliente.ToString());
             }
         }
 
@@ -43,8 +62,7 @@ namespace pizzariaLeVelmont
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             variaveis.funcao = "CADASTRAR";
-
-          //  new frmCadastrarCliente.Show();
+          new frmClienteCadastrar().Show();
             Hide();
         }
 
@@ -74,22 +92,7 @@ namespace pizzariaLeVelmont
             }
         }
 
-        private void txtNomeCliente_TextChanged(object sender, EventArgs e)
-        {
-            variaveis.nomeCliente = txtNomeCliente.Text;
-            banco.CarregarClienteNome();
-
-            if (txtNomeCliente.Text == "")
-            {
-                chkAtivo.Enabled = true;
-                chkPendente.Enabled = true;
-            }
-            else
-            {
-                chkAtivo.Enabled = false;
-                chkPendente.Enabled = false;
-            }
-        }
+       
 
         private void chkAtivo_CheckedChanged(object sender, EventArgs e)
         {
