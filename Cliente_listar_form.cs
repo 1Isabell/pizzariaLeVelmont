@@ -69,7 +69,7 @@ namespace pizzariaLeVelmont
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             variaveis.funcao = "ALTERAR";
-            //new frmAlterarCliente().Show();
+            new frmClienteCadastrar().Show();
             Hide();
         }
 

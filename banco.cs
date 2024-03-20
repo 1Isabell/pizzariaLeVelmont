@@ -441,7 +441,7 @@ namespace pizzariaLeVelmont
             cmd.Parameters.AddWithValue("@statusPagamento", variaveis.statusPagamento); //ADICIONAR OS VALORES DO PARÁMETROS NA VAR
             cmd.Parameters.AddWithValue("@tipoPagamento", variaveis.tipoPagamento);
             cmd.Parameters.AddWithValue("@precoPagamento", variaveis.precoPagamento);
-            cmd.Parameters.AddWithValue("@codCliente", variaveis.codCliente);
+            cmd.Parameters.AddWithValue("@codCliente", variaveis.nomeCliente);
          
          
             
@@ -526,12 +526,6 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Erro ao carregar os nomes clientes!\n\n" + erro);
             }   
         }
-
-
-
-
-
-
 
 
 
@@ -642,7 +636,7 @@ namespace pizzariaLeVelmont
 
         //STATUS CLIENTE ONDE MOSTRAR O VALOR DO PAGAMENTO PENDENTE
 
-
+        //STATUS PENDENTE DO CLIENTE
 
         public static void CarregarStatusPendente()
         {
@@ -685,7 +679,7 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string inserir = "INSERT INTO `tblcliente`( `nomeCliente`, `dataNascCliente`, `telefoneCliente`, `enderecoCliente`, `pagamentosPendentes`, `statusCliente`) \r\nVALUES (@nomeCliente, @dataNascimentoC,@telefoneCliente,@enderecoCliente,@pagamentoPendCliente,@statusCliente);";
+                string inserir = "INSERT INTO `tblcliente`( `nomeCliente`, `dataNascCliente`, `telefoneCliente`, `enderecoCliente`, `pagamentosPendentes`, `statusCliente`) VALUES (@nomeCliente, @dataNascimentoC,@telefoneCliente,@enderecoCliente,@pagamentoPendCliente,@statusCliente);";
                 MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
 
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
@@ -706,7 +700,8 @@ namespace pizzariaLeVelmont
                 MessageBox.Show("Erro ao cadastrar o Cliente!\n\n" + erro.Message, "ERRO");
             }
         }
-
+         
+        // CARREGAR DADOS
         public static void CarregarDadosCliente()
         {
             try
@@ -734,11 +729,36 @@ namespace pizzariaLeVelmont
             }
         }
         
+        //ALTERAR
 
     public static void AlterarCliente()
     {
-            ///
-    }
+            try
+            {
+                conexao.Conectar();
+                string alterar = "UPDATE `tblcliente` SET nomeCliente = @nomeCliente, dataNascCliente = @dataNascimentoC, telefoneCliente = @telefoneCliente, enderecoCliente = @enderecoCliente, pagamentosPendentes = @pagamentoPendCliente, statusCliente = @statusCliente WHERE idCliente = @idCliente;";
+                MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
+                //parametros
+                cmd.Parameters.AddWithValue("nomeCliente", variaveis.nomeCliente);
+                cmd.Parameters.AddWithValue("dataNascCliente", variaveis.dataNascimentoC);
+                cmd.Parameters.AddWithValue("telefoneCliente", variaveis.telefoneClinte);
+                cmd.Parameters.AddWithValue("@enderecoCliente", variaveis.enderecoCliente);
+                cmd.Parameters.AddWithValue("@pagamentoPendCliente", variaveis.pagamentoPendCliente);
+                cmd.Parameters.AddWithValue("@statusCliente", variaveis.statusCliente);
+                
+                //cmd parametros
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cliente alterado com sucesso!", "ALTERAÇÃO DO FUNCIONÁRIO");
+                conexao.Desconectar();
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao alterar Cliente!\n\n" + erro.Message, "ERRO");
+            }
+        }
     
         //DESATIVAR 
 
