@@ -93,6 +93,7 @@
             this.pctSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctSair.TabIndex = 55;
             this.pctSair.TabStop = false;
+            this.pctSair.Click += new System.EventHandler(this.pctSair_Click);
             // 
             // chkAtivo
             // 

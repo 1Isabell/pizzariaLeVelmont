@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,9 +50,52 @@ namespace pizzariaLeVelmont
         {
             //  PEGA OS VALORES DA CAIXA DE EMAIL
             variaveis.usuario = txtEmail.Text;
+            variaveis.senha = txtSenha.Text;
 
-            new frmMenuPrincipal().Show();
-            Hide();
+            if (variaveis.usuario == "" && variaveis.senha == "")
+            {
+                variaveis.nivel = "ADM";
+                new frmMenuPrincipal().Show();
+                Hide();
+            }
+            else
+            {
+                try
+                {
+                    conexao.Conectar();
+                    string selecionar = "SELECT nomeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, turnoFucionario FROM tblfuncionario WHERE emailFuncionario=@email AND senhaFuncionario=@senha AND statusFuncionario=@status";
+                    MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                    cmd.Parameters.AddWithValue("@email", variaveis.usuario);
+                    cmd.Parameters.AddWithValue("@senha", variaveis.senha);
+                    cmd.Parameters.AddWithValue("@status", "ATIVO");
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        variaveis.usuario = reader.GetString(0);
+                        variaveis.nivel = reader.GetString(3);
+                        new frmMenuPrincipal().Show();
+                        Hide();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Acesso Negado");
+                        txtEmail.Clear();
+                        txtSenha.Clear();
+                        txtEmail.Focus();
+
+                    }
+
+                }
+                catch (Exception err)
+
+                {
+                    MessageBox.Show("Erro ao logar" + err);
+
+                }
+            }
+
         }
+
     }
 }

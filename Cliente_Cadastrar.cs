@@ -21,7 +21,7 @@ namespace pizzariaLeVelmont
 
         private void pctSair_Click(object sender, EventArgs e)
         {
-            new frmMenuPrincipal().Show();
+            new frm().Show();
             Close();
         }
 
@@ -47,8 +47,8 @@ namespace pizzariaLeVelmont
         {
             if (e.KeyChar == (char)Keys.Enter)  // CÓDIGO RESPONSAVEL DE SÓ´PERMITIR IR PARA O PROXIMO CAMPOS SE DER ENTER
             {
-                txtPagamento.Enabled = true;
-                txtPagamento.Focus();
+                txtPagamentoCliente.Enabled = true;
+                txtPagamentoCliente.Focus();
             }
         }
 
@@ -112,11 +112,11 @@ namespace pizzariaLeVelmont
                 mkbTelefone.Focus();
                 lblDataNasc.ForeColor = Color.Red;
             }
-            else if (txtPagamento.Text == "") //NÃO ACEITA TEXTO VAZIO
+            else if (txtPagamentoCliente.Text == "") //NÃO ACEITA TEXTO VAZIO
             {
                 MessageBox.Show("Favor colocar o valor pendente");
-                txtPagamento.Clear();
-                txtPagamento.Focus();
+                txtPagamentoCliente.Clear();
+                txtPagamentoCliente.Focus();
                 lblPagamentoPend.ForeColor = Color.Red;
             }
             else if (txtEndereco.Text == "") //NÃO ACEITA TEXTO VAZIO
@@ -137,9 +137,9 @@ namespace pizzariaLeVelmont
             else
             {
                 variaveis.nomeCliente = txtNomeCliente.Text;
-                mkbDataNascCliente.Text = variaveis.dataNascimentoC.ToString();
+                variaveis.dataNascimentoC = DateTime.Parse(mkbDataNascCliente.Text);
                 variaveis.telefoneClinte = mkbTelefone.Text;
-                txtPagamento.Text = variaveis.pagamentoPendCliente.ToString();
+                txtPagamentoCliente.Text = variaveis.pagamentoPendCliente.ToString();
                 variaveis.enderecoCliente = txtEndereco.Text;
                 variaveis.statusCliente = cmbStatus.Text;
 
@@ -167,28 +167,25 @@ namespace pizzariaLeVelmont
         {
             if (variaveis.funcao == "ALTERAR")
             {
-              
                 btnCadastrar.Text = "ALTERAR";
                 banco.CarregarDadosCliente();
-                txtNomeCliente.Text = variaveis.nomeFuncionario;
-                mkbDataNascCliente.Text = variaveis.dataNascimentoC.ToString();
-                variaveis.telefoneClinte = mkbTelefone.Text;
-                txtPagamento.Text = variaveis.pagamentoPendCliente.ToString();
-                variaveis.enderecoCliente = txtEndereco.Text;
-                variaveis.statusCliente = cmbStatus.Text;
 
+                txtNomeCliente.Text = variaveis.nomeCliente;
+                // Certifique-se de converter a data para o formato correto antes de atribuí-la ao componente.
+                mkbDataNascCliente.Text = variaveis.dataNascimentoC.ToString("dd/MM/yyyy");
+                mkbTelefone.Text = variaveis.telefoneClinte.ToString();
+                txtPagamentoCliente.Text = variaveis.pagamentoPendCliente.ToString();
+                txtEndereco.Text = variaveis.enderecoCliente;
+                cmbStatus.Text = variaveis.statusCliente;
 
                 txtNomeCliente.Enabled = true;
                 mkbDataNascCliente.Enabled = true;
                 mkbTelefone.Enabled = true;
-                txtPagamento.Enabled = true;
+                txtPagamentoCliente.Enabled = true;
                 txtEndereco.Enabled = true;
-              
-
-
+                cmbStatus.Enabled = true;
             }
         }
-
        
     }
 }

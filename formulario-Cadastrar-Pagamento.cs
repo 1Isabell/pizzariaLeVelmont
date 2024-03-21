@@ -129,6 +129,8 @@ namespace pizzariaLeVelmont
             }
         }
 
+        
+
         private void cmbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             banco.CarregarClienteCombo();

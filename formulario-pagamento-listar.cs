@@ -106,5 +106,12 @@ namespace pizzariaLeVelmont
             dgvPagamento.Sort(dgvPagamento.Columns[1], ListSortDirection.Ascending);
             dgvPagamento.ClearSelection();
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "ALTERAR";
+            new frmCadastrarPagamento().Show();
+            Hide();
+        }
     }
 }

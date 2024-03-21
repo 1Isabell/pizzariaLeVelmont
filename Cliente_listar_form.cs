@@ -28,7 +28,7 @@ namespace pizzariaLeVelmont
 
             variaveis.nomeCliente = txtNomeCliente.Text;
 
-            banco.CarregarCliente(); // CARREGAR O NOME DO CLIENTE
+            banco.CarregarClienteNome(); // CARREGAR O NOME DO CLIENTE
 
             if (txtNomeCliente.Text == "")
             {
@@ -126,6 +126,10 @@ namespace pizzariaLeVelmont
             }
         }
 
-      
+        private void pctSair_Click(object sender, EventArgs e)
+        {
+            new frmMenuPrincipal().Show();
+            Close();
+        }
     }
 }

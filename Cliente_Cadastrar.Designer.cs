@@ -34,7 +34,7 @@
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.pnlCadastroCliente = new System.Windows.Forms.Panel();
-            this.txtPagamento = new System.Windows.Forms.TextBox();
+            this.txtPagamentoCliente = new System.Windows.Forms.TextBox();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
@@ -123,7 +123,7 @@
             // pnlCadastroCliente
             // 
             this.pnlCadastroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.pnlCadastroCliente.Controls.Add(this.txtPagamento);
+            this.pnlCadastroCliente.Controls.Add(this.txtPagamentoCliente);
             this.pnlCadastroCliente.Controls.Add(this.lblEndereco);
             this.pnlCadastroCliente.Controls.Add(this.lblStatus);
             this.pnlCadastroCliente.Controls.Add(this.cmbStatus);
@@ -140,18 +140,18 @@
             this.pnlCadastroCliente.Size = new System.Drawing.Size(1091, 403);
             this.pnlCadastroCliente.TabIndex = 11;
             // 
-            // txtPagamento
+            // txtPagamentoCliente
             // 
-            this.txtPagamento.BackColor = System.Drawing.Color.White;
-            this.txtPagamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtPagamento.Location = new System.Drawing.Point(613, 132);
-            this.txtPagamento.Name = "txtPagamento";
-            this.txtPagamento.Size = new System.Drawing.Size(339, 31);
-            this.txtPagamento.TabIndex = 81;
-            this.txtPagamento.Text = " ";
-            this.txtPagamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagamento_KeyPress);
+            this.txtPagamentoCliente.BackColor = System.Drawing.Color.White;
+            this.txtPagamentoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPagamentoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPagamentoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
+            this.txtPagamentoCliente.Location = new System.Drawing.Point(613, 132);
+            this.txtPagamentoCliente.Name = "txtPagamentoCliente";
+            this.txtPagamentoCliente.Size = new System.Drawing.Size(339, 31);
+            this.txtPagamentoCliente.TabIndex = 81;
+            this.txtPagamentoCliente.Text = " ";
+            this.txtPagamentoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagamento_KeyPress);
             // 
             // lblEndereco
             // 
@@ -194,7 +194,7 @@
             this.mkbTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mkbTelefone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbTelefone.Location = new System.Drawing.Point(285, 132);
-            this.mkbTelefone.Mask = " 00000-0000";
+            this.mkbTelefone.Mask = "(99) 0000-00000";
             this.mkbTelefone.Name = "mkbTelefone";
             this.mkbTelefone.Size = new System.Drawing.Size(272, 31);
             this.mkbTelefone.TabIndex = 77;
@@ -321,6 +321,6 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.TextBox txtPagamento;
+        private System.Windows.Forms.TextBox txtPagamentoCliente;
     }
 }
