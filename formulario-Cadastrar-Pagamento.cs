@@ -105,7 +105,6 @@ namespace pizzariaLeVelmont
             {
                 variaveis.nomeCliente = cmbNomeCliente.Text;
                 variaveis.precoPagamento = int.Parse(txtPagamento.Text);
-           
                 variaveis.statusPagamento = cmbStatus.Text;
 
 

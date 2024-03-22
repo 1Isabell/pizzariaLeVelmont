@@ -456,21 +456,21 @@ namespace pizzariaLeVelmont
            try
             {
                 conexao.Conectar();
-                string selecionar = "SELECT * FROM tblpagamento WHERE idPagamento = @codPagamento;";
+                string selecionar = "SELECT `idPagamento`, `statusPagamento`, `preçoPagamento`, `nomeCliente` FROM tblpagamento WHERE idPagamento = @codPagamento;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
-                cmd.Parameters.AddWithValue("@codPagamento", variaveis.CodPagamento);
+                cmd.Parameters.AddWithValue("codPagamento", variaveis.CodPagamento);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     variaveis.statusPagamento = reader.GetString(1); 
-                    variaveis.precoPagamento = reader.GetInt32(3);
-                    variaveis.nomeCliente = reader.GetString(4);
+                    variaveis.precoPagamento = reader.GetDouble(2);
+                    variaveis.nomeCliente = reader.GetString(3);
                 }
                 conexao.Desconectar();
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro ao carregar os dados do funcionario!\n\n" + erro);
+                MessageBox.Show("Erro ao carregar os dados do Pagamento!\n\n" + erro);
             }
 
         }

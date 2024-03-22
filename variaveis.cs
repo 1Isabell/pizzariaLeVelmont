@@ -29,11 +29,12 @@ namespace pizzariaLeVelmont
         public static int codEstoque, quantidadeEstoque, preçoEstoque;
         public static string nomeEstoque, fornecedorEstoque,categoriaEstoque, statusEstoque;
         public static DateTime dataValidadeEstoque;
-        
+
 
 
         //PAGAMENTOS - ISABELLA
-        public static int CodPagamento, precoPagamento;
+        public static double precoPagamento;
+        public static int CodPagamento;
         public static string  statusPagamento;
 
         //CLIENTE -ISABELLA
