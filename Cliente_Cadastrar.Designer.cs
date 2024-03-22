@@ -34,12 +34,10 @@
             this.pctSair = new System.Windows.Forms.PictureBox();
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.pnlCadastroCliente = new System.Windows.Forms.Panel();
-            this.txtPagamentoCliente = new System.Windows.Forms.TextBox();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.mkbTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.lblPagamentoPend = new System.Windows.Forms.Label();
             this.mkbDataNascCliente = new System.Windows.Forms.MaskedTextBox();
             this.lblDataNasc = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -123,12 +121,10 @@
             // pnlCadastroCliente
             // 
             this.pnlCadastroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.pnlCadastroCliente.Controls.Add(this.txtPagamentoCliente);
             this.pnlCadastroCliente.Controls.Add(this.lblEndereco);
             this.pnlCadastroCliente.Controls.Add(this.lblStatus);
             this.pnlCadastroCliente.Controls.Add(this.cmbStatus);
             this.pnlCadastroCliente.Controls.Add(this.mkbTelefone);
-            this.pnlCadastroCliente.Controls.Add(this.lblPagamentoPend);
             this.pnlCadastroCliente.Controls.Add(this.mkbDataNascCliente);
             this.pnlCadastroCliente.Controls.Add(this.lblDataNasc);
             this.pnlCadastroCliente.Controls.Add(this.lblTelefone);
@@ -140,24 +136,11 @@
             this.pnlCadastroCliente.Size = new System.Drawing.Size(1091, 403);
             this.pnlCadastroCliente.TabIndex = 11;
             // 
-            // txtPagamentoCliente
-            // 
-            this.txtPagamentoCliente.BackColor = System.Drawing.Color.White;
-            this.txtPagamentoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPagamentoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPagamentoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtPagamentoCliente.Location = new System.Drawing.Point(613, 132);
-            this.txtPagamentoCliente.Name = "txtPagamentoCliente";
-            this.txtPagamentoCliente.Size = new System.Drawing.Size(339, 31);
-            this.txtPagamentoCliente.TabIndex = 81;
-            this.txtPagamentoCliente.Text = " ";
-            this.txtPagamentoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagamento_KeyPress);
-            // 
             // lblEndereco
             // 
             this.lblEndereco.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblEndereco.Location = new System.Drawing.Point(81, 184);
+            this.lblEndereco.Location = new System.Drawing.Point(80, 256);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(157, 32);
             this.lblEndereco.TabIndex = 62;
@@ -168,7 +151,7 @@
             // 
             this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblStatus.Location = new System.Drawing.Point(81, 273);
+            this.lblStatus.Location = new System.Drawing.Point(789, 152);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(88, 32);
             this.lblStatus.TabIndex = 54;
@@ -183,9 +166,9 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "ATIVO",
             "DESATIVADO"});
-            this.cmbStatus.Location = new System.Drawing.Point(86, 308);
+            this.cmbStatus.Location = new System.Drawing.Point(715, 187);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(173, 31);
+            this.cmbStatus.Size = new System.Drawing.Size(237, 31);
             this.cmbStatus.TabIndex = 76;
             this.cmbStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbStatus_KeyPress);
             // 
@@ -193,33 +176,21 @@
             // 
             this.mkbTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mkbTelefone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkbTelefone.Location = new System.Drawing.Point(285, 132);
-            this.mkbTelefone.Mask = "(99) 0000-00000";
+            this.mkbTelefone.Location = new System.Drawing.Point(386, 187);
+            this.mkbTelefone.Mask = "(99)0000-00000";
             this.mkbTelefone.Name = "mkbTelefone";
             this.mkbTelefone.Size = new System.Drawing.Size(272, 31);
             this.mkbTelefone.TabIndex = 77;
             this.mkbTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mkbTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mkbTelefone_KeyPress);
-            // 
-            // lblPagamentoPend
-            // 
-            this.lblPagamentoPend.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagamentoPend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblPagamentoPend.Location = new System.Drawing.Point(608, 97);
-            this.lblPagamentoPend.Name = "lblPagamentoPend";
-            this.lblPagamentoPend.Size = new System.Drawing.Size(325, 32);
-            this.lblPagamentoPend.TabIndex = 60;
-            this.lblPagamentoPend.Text = "Pagamento Pendente:";
-            this.lblPagamentoPend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mkbDataNascCliente
             // 
             this.mkbDataNascCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mkbDataNascCliente.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkbDataNascCliente.Location = new System.Drawing.Point(86, 132);
+            this.mkbDataNascCliente.Location = new System.Drawing.Point(86, 187);
             this.mkbDataNascCliente.Mask = "00/00/0000";
             this.mkbDataNascCliente.Name = "mkbDataNascCliente";
-            this.mkbDataNascCliente.Size = new System.Drawing.Size(156, 31);
+            this.mkbDataNascCliente.Size = new System.Drawing.Size(225, 31);
             this.mkbDataNascCliente.TabIndex = 72;
             this.mkbDataNascCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mkbDataNascCliente.ValidatingType = typeof(System.DateTime);
@@ -229,7 +200,7 @@
             // 
             this.lblDataNasc.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNasc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblDataNasc.Location = new System.Drawing.Point(81, 97);
+            this.lblDataNasc.Location = new System.Drawing.Point(118, 152);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(144, 32);
             this.lblDataNasc.TabIndex = 42;
@@ -240,7 +211,7 @@
             // 
             this.lblTelefone.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblTelefone.Location = new System.Drawing.Point(280, 97);
+            this.lblTelefone.Location = new System.Drawing.Point(452, 152);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(137, 32);
             this.lblTelefone.TabIndex = 58;
@@ -251,7 +222,7 @@
             // 
             this.lblNome.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblNome.Location = new System.Drawing.Point(51, 13);
+            this.lblNome.Location = new System.Drawing.Point(80, 58);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(157, 32);
             this.lblNome.TabIndex = 1;
@@ -264,7 +235,7 @@
             this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtNomeCliente.Location = new System.Drawing.Point(85, 48);
+            this.txtNomeCliente.Location = new System.Drawing.Point(85, 93);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(867, 31);
             this.txtNomeCliente.TabIndex = 0;
@@ -276,7 +247,7 @@
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtEndereco.Location = new System.Drawing.Point(85, 219);
+            this.txtEndereco.Location = new System.Drawing.Point(85, 291);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(867, 31);
             this.txtEndereco.TabIndex = 63;
@@ -314,13 +285,11 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.MaskedTextBox mkbTelefone;
-        private System.Windows.Forms.Label lblPagamentoPend;
         private System.Windows.Forms.MaskedTextBox mkbDataNascCliente;
         private System.Windows.Forms.Label lblDataNasc;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.TextBox txtPagamentoCliente;
     }
 }

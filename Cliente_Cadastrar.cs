@@ -21,7 +21,7 @@ namespace pizzariaLeVelmont
 
         private void pctSair_Click(object sender, EventArgs e)
         {
-            new frm().Show();
+            new frmClientelistar().Show();
             Close();
         }
 
@@ -43,15 +43,7 @@ namespace pizzariaLeVelmont
             }
         }
 
-        private void mkbTelefone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)  // CÓDIGO RESPONSAVEL DE SÓ´PERMITIR IR PARA O PROXIMO CAMPOS SE DER ENTER
-            {
-                txtPagamentoCliente.Enabled = true;
-                txtPagamentoCliente.Focus();
-            }
-        }
-
+      
         private void txtPagamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)  // CÓDIGO RESPONSAVEL DE SÓ´PERMITIR IR PARA O PROXIMO CAMPOS SE DER ENTER
@@ -87,7 +79,7 @@ namespace pizzariaLeVelmont
             mkbDataNascCliente.ForeColor = Color.FromArgb(242, 188, 5);
             lblTelefone.ForeColor = Color.FromArgb(242, 188, 5);
             mkbTelefone.ForeColor = Color.FromArgb(242, 188, 5);
-            lblPagamentoPend.ForeColor = Color.FromArgb(242, 188, 5);
+           
             lblEndereco.ForeColor = Color.FromArgb(242, 188, 5);
             cmbStatus.ForeColor = Color.FromArgb(242, 188, 5);
 
@@ -112,13 +104,7 @@ namespace pizzariaLeVelmont
                 mkbTelefone.Focus();
                 lblDataNasc.ForeColor = Color.Red;
             }
-            else if (txtPagamentoCliente.Text == "") //NÃO ACEITA TEXTO VAZIO
-            {
-                MessageBox.Show("Favor colocar o valor pendente");
-                txtPagamentoCliente.Clear();
-                txtPagamentoCliente.Focus();
-                lblPagamentoPend.ForeColor = Color.Red;
-            }
+           
             else if (txtEndereco.Text == "") //NÃO ACEITA TEXTO VAZIO
             {
                 MessageBox.Show("Favor colocar o valor pendente");
@@ -139,7 +125,7 @@ namespace pizzariaLeVelmont
                 variaveis.nomeCliente = txtNomeCliente.Text;
                 variaveis.dataNascimentoC = DateTime.Parse(mkbDataNascCliente.Text);
                 variaveis.telefoneClinte = mkbTelefone.Text;
-                txtPagamentoCliente.Text = variaveis.pagamentoPendCliente.ToString();
+               
                 variaveis.enderecoCliente = txtEndereco.Text;
                 variaveis.statusCliente = cmbStatus.Text;
 
@@ -174,14 +160,13 @@ namespace pizzariaLeVelmont
                 // Certifique-se de converter a data para o formato correto antes de atribuí-la ao componente.
                 mkbDataNascCliente.Text = variaveis.dataNascimentoC.ToString("dd/MM/yyyy");
                 mkbTelefone.Text = variaveis.telefoneClinte.ToString();
-                txtPagamentoCliente.Text = variaveis.pagamentoPendCliente.ToString();
+               
                 txtEndereco.Text = variaveis.enderecoCliente;
                 cmbStatus.Text = variaveis.statusCliente;
 
                 txtNomeCliente.Enabled = true;
                 mkbDataNascCliente.Enabled = true;
                 mkbTelefone.Enabled = true;
-                txtPagamentoCliente.Enabled = true;
                 txtEndereco.Enabled = true;
                 cmbStatus.Enabled = true;
             }

@@ -34,11 +34,12 @@ namespace pizzariaLeVelmont
 
         //PAGAMENTOS - ISABELLA
         public static int CodPagamento, precoPagamento;
-        public static string   tipoPagamento, statusPagamento;
+        public static string  statusPagamento;
 
         //CLIENTE -ISABELLA
 
-        public static int codCliente,pagamentoPendCliente;
+        public static int codCliente;
+       
         public static string nomeCliente, telefoneClinte, enderecoCliente, statusCliente;
         public static DateTime dataNascimentoC;
 

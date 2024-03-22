@@ -311,10 +311,9 @@ namespace pizzariaLeVelmont
 
                 dgPagamento.Columns[0].HeaderText = "ID Pagamento";
                 dgPagamento.Columns[1].HeaderText = "Status";
-                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
-                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
-                dgPagamento.Columns[4].HeaderText = "ID Cliente";
-                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
+                dgPagamento.Columns[2].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[3].HeaderText = "ID Cliente";
+                dgPagamento.Columns[4].HeaderText = "Nome Cliente";
 
                 dgPagamento.ClearSelection();
 
@@ -347,10 +346,10 @@ namespace pizzariaLeVelmont
 
                 dgPagamento.Columns[0].HeaderText = "ID Pagamento";
                 dgPagamento.Columns[1].HeaderText = "Status";
-                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
-                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
-                dgPagamento.Columns[4].HeaderText = "ID Cliente";
-                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
+                dgPagamento.Columns[2].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[3].HeaderText = "ID Cliente";
+                dgPagamento.Columns[4].HeaderText = "Nome Cliente";
+
 
                 dgPagamento.ClearSelection();
 
@@ -382,10 +381,10 @@ namespace pizzariaLeVelmont
 
                 dgPagamento.Columns[0].HeaderText = "ID Pagamento";
                 dgPagamento.Columns[1].HeaderText = "Status";
-                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
-                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
-                dgPagamento.Columns[4].HeaderText = "ID Cliente";
-                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
+                dgPagamento.Columns[2].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[3].HeaderText = "ID Cliente";
+                dgPagamento.Columns[4].HeaderText = "Nome Cliente";
+                
 
                 dgPagamento.ClearSelection();
 
@@ -416,10 +415,9 @@ namespace pizzariaLeVelmont
 
                 dgPagamento.Columns[0].HeaderText = "ID Pagamento";
                 dgPagamento.Columns[1].HeaderText = "Status";
-                dgPagamento.Columns[2].HeaderText = "Tipo de Pagamento";
-                dgPagamento.Columns[3].HeaderText = "Preço do Pagamento";
-                dgPagamento.Columns[4].HeaderText = "ID Cliente";
-                dgPagamento.Columns[5].HeaderText = "Nome Cliente";
+                dgPagamento.Columns[2].HeaderText = "Preço do Pagamento";
+                dgPagamento.Columns[3].HeaderText = "ID Cliente";
+                dgPagamento.Columns[4].HeaderText = "Nome Cliente";
 
                 dgPagamento.ClearSelection();
 
@@ -435,11 +433,10 @@ namespace pizzariaLeVelmont
          public static void InserirPagamento()
         {
             conexao.Conectar();
-            string inserir = "INSERT INTO `tblpagamento`( statusPagamento, tipoPagamento, preçoPagamento, idCliente) VALUES (@statusPagamento,@tipoPagamento,@precoPagamento,@codCliente);";
+            string inserir = "INSERT INTO `tblpagamento`( statusPagamento, preçoPagamento, idCliente) VALUES (@statusPagamento,@tipoPagamento,@precoPagamento,@codCliente);";
             MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
             //PARÁMETROS
             cmd.Parameters.AddWithValue("@statusPagamento", variaveis.statusPagamento); //ADICIONAR OS VALORES DO PARÁMETROS NA VAR
-            cmd.Parameters.AddWithValue("@tipoPagamento", variaveis.tipoPagamento);
             cmd.Parameters.AddWithValue("@precoPagamento", variaveis.precoPagamento);
             cmd.Parameters.AddWithValue("@codCliente", variaveis.nomeCliente);
          
@@ -465,8 +462,7 @@ namespace pizzariaLeVelmont
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    variaveis.statusPagamento = reader.GetString(1);
-                    variaveis.tipoPagamento = reader.GetString(2);
+                    variaveis.statusPagamento = reader.GetString(1); 
                     variaveis.precoPagamento = reader.GetInt32(3);
                     variaveis.nomeCliente = reader.GetString(4);
                 }
@@ -485,12 +481,11 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string alterar = "UPDATE tblpagamento SET statusPagamento = @statusPagamento, tipoPagamento = @tipoPagamento, preçoPagamento = precoPagamento, idCliente = codCliente WHERE idPagamento = codPadamento;";
+                string alterar = "UPDATE tblpagamento SET statusPagamento = @statusPagamento, preçoPagamento = precoPagamento, idCliente = codCliente WHERE idPagamento = codPadamento;";
 
                 MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
                 //PARÁMETROS
-                cmd.Parameters.AddWithValue("@statusPagamento", variaveis.statusPagamento); //ADICIONAR OS VALORES DO PARÁMETROS NA VAR
-                cmd.Parameters.AddWithValue("@tipoPagamento", variaveis.tipoPagamento);
+                cmd.Parameters.AddWithValue("@statusPagamento", variaveis.statusPagamento); //ADICIONAR OS VALORES DO PARÁMETROS NA VA  
                 cmd.Parameters.AddWithValue("@precoPagamento", variaveis.precoPagamento);
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
 
@@ -552,8 +547,7 @@ namespace pizzariaLeVelmont
                 dgCliente.Columns[2].HeaderText = "Data de Nascimento";
                 dgCliente.Columns[3].HeaderText = "Telefone";
                 dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
-                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
-                dgCliente.Columns[6].HeaderText = "Status";
+                dgCliente.Columns[5].HeaderText = "Status";
 
                 dgCliente.ClearSelection();
 
@@ -582,13 +576,13 @@ namespace pizzariaLeVelmont
 
                 dgCliente.DataSource= dt;
 
+
                 dgCliente.Columns[0].HeaderText = "ID Cliente";
                 dgCliente.Columns[1].HeaderText = "Nome";
                 dgCliente.Columns[2].HeaderText = "Data de Nascimento";
                 dgCliente.Columns[3].HeaderText = "Telefone";
                 dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
-                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
-                dgCliente.Columns[6].HeaderText = "Status";
+                dgCliente.Columns[5].HeaderText = "Status";
 
                 dgCliente.ClearSelection();
 
@@ -617,11 +611,11 @@ namespace pizzariaLeVelmont
 
                 dgCliente.Columns[0].HeaderText = "ID Cliente";
                 dgCliente.Columns[1].HeaderText = "Nome";
-                dgCliente.Columns[2].HeaderText = "Data de Nascimento"; //
+                dgCliente.Columns[2].HeaderText = "Data de Nascimento";
                 dgCliente.Columns[3].HeaderText = "Telefone";
                 dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
-                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
-                dgCliente.Columns[6].HeaderText = "Status";
+                dgCliente.Columns[5].HeaderText = "Status";
+
 
                 dgCliente.ClearSelection();
 
@@ -652,13 +646,13 @@ namespace pizzariaLeVelmont
 
                 dgCliente.DataSource = dt;
 
-                dgCliente.Columns[0].Visible = false;
+                dgCliente.Columns[0].HeaderText = "ID Cliente";
                 dgCliente.Columns[1].HeaderText = "Nome";
                 dgCliente.Columns[2].HeaderText = "Data de Nascimento";
                 dgCliente.Columns[3].HeaderText = "Telefone";
                 dgCliente.Columns[4].HeaderText = "Endereço/Bairro";
-                dgCliente.Columns[5].HeaderText = "Pagamentos Pendente";
-                dgCliente.Columns[6].HeaderText = "Status";
+                dgCliente.Columns[5].HeaderText = "Status";
+
 
                 dgCliente.ClearSelection();
 
@@ -679,14 +673,14 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string inserir = "INSERT INTO `tblcliente`( `nomeCliente`, `dataNascCliente`, `telefoneCliente`, `enderecoCliente`, `pagamentosPendentes`, `statusCliente`) VALUES (@nomeCliente, @dataNascimentoC,@telefoneCliente,@enderecoCliente,@pagamentoPendCliente,@statusCliente);";
+                string inserir = "INSERT INTO `tblcliente`( `nomeCliente`, `dataNascCliente`, `telefoneCliente`, `enderecoCliente` , `statusCliente`) VALUES (@nomeCliente, @dataNascimentoC,@telefoneCliente,@enderecoCliente,@pagamentoPendCliente,@statusCliente);";
                 MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
 
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
                 cmd.Parameters.AddWithValue("@dataNascimentoC", variaveis.dataNascimentoC);
                 cmd.Parameters.AddWithValue("@telefoneCliente", variaveis.telefoneClinte);
                 cmd.Parameters.AddWithValue("@enderecoCliente", variaveis.enderecoCliente);
-                cmd.Parameters.AddWithValue("@pagamentoPendCliente", variaveis.pagamentoPendCliente);
+               
                 cmd.Parameters.AddWithValue("@statusCliente", variaveis.statusCliente);
 
 
@@ -719,9 +713,8 @@ namespace pizzariaLeVelmont
                     variaveis.nomeCliente = reader.GetString(1);
                     variaveis.dataNascimentoC = reader.GetDateTime(2);
                     variaveis.telefoneClinte = reader.GetString(3);
-                    variaveis.enderecoCliente = reader.GetString(4);
-                    variaveis.pagamentoPendCliente = reader.GetInt32(5);
-                    variaveis.statusCliente = reader.GetString(6);
+                    variaveis.enderecoCliente = reader.GetString(4);  
+                    variaveis.statusCliente = reader.GetString(5);
                 }
                 conexao.Desconectar();
             }
@@ -738,15 +731,14 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string alterar = "UPDATE tblcliente SET nomeCliente = @nomeCliente, dataNascCliente = @dataNascimentoC, telefoneCliente = @telefoneCliente, enderecoCliente = @enderecoCliente, pagamentosPendentes = @pagamentoPendCliente, statusCliente = @statusCliente WHERE idCliente = @codCliente;";
+                string alterar = "UPDATE tblcliente SET nomeCliente = @nomeCliente, dataNascCliente = @dataNascimentoC, telefoneCliente = @telefoneCliente, enderecoCliente = @enderecoCliente, statusCliente = @statusCliente WHERE idCliente = @codCliente;";
                 MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
 
                 // Parâmetros
                 cmd.Parameters.AddWithValue("@nomeCliente", variaveis.nomeCliente);
                 cmd.Parameters.AddWithValue("@dataNascimentoC", variaveis.dataNascimentoC);
                 cmd.Parameters.AddWithValue("@telefoneCliente", variaveis.telefoneClinte);
-                cmd.Parameters.AddWithValue("@enderecoCliente", variaveis.enderecoCliente);
-                cmd.Parameters.AddWithValue("@pagamentoPendCliente", variaveis.pagamentoPendCliente);
+                cmd.Parameters.AddWithValue("@enderecoCliente", variaveis.enderecoCliente); 
                 cmd.Parameters.AddWithValue("@statusCliente", variaveis.statusCliente);
                 cmd.Parameters.AddWithValue("@codCliente", variaveis.codCliente);
 

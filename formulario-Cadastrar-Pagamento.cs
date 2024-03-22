@@ -33,15 +33,14 @@ namespace pizzariaLeVelmont
                 txtidPagamento.Text = variaveis.CodPagamento.ToString(); ;
                 cmbNomeCliente.Text = variaveis.nomeCliente;
                 txtPagamento.Text = variaveis.precoPagamento.ToString();
-                cmbTipoPagamento.Text = variaveis.tipoPagamento;
-                cmbStatus.Text = variaveis.statusEstoque;
+                cmbStatus.Text = variaveis.statusPagamento;
                 btnAlterar.Text = "ALTERAR";
 
 
                 txtidPagamento.Enabled = true;
                 cmbNomeCliente.Enabled = true;
                 txtPagamento.Enabled = true;
-                cmbTipoPagamento.Enabled = true;
+               
                 cmbStatus.Enabled = true;
                 cmbStatus.Enabled = true;
                 btnAlterar.Enabled = true;
@@ -56,23 +55,23 @@ namespace pizzariaLeVelmont
             }
         }
 
+        private void cmbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            banco.cmbNomeCliente = cmbNomeCliente;
+            banco.CarregarClienteCombo();
+
+        }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             lblidPagamento.ForeColor = Color.FromArgb(75, 73, 73);
             lblidCliente.ForeColor = Color.FromArgb(75, 73, 73);
             lblPreçoPagamento.ForeColor = Color.FromArgb(75, 73, 73);
-            lblTipoPagamento.ForeColor = Color.FromArgb(75, 73, 73);
+           
             lblStatus.ForeColor = Color.FromArgb(75, 73, 73);
 
-            if (cmbTipoPagamento.Text == "")
-            {
-                MessageBox.Show("Favor colocar tipo");
-                cmbTipoPagamento.SelectedIndex = -1;
-                cmbTipoPagamento.Focus();
-                lblPreçoPagamento.ForeColor = Color.Red;
-            }
+            
 
-            else if (txtPagamento.Text == "")//Não aceita Texto vazio
+             if (txtPagamento.Text == "")//Não aceita Texto vazio
             {
                 MessageBox.Show("Favor colocar o valor");
                 txtPagamento.Clear();
@@ -106,7 +105,7 @@ namespace pizzariaLeVelmont
             {
                 variaveis.nomeCliente = cmbNomeCliente.Text;
                 variaveis.precoPagamento = int.Parse(txtPagamento.Text);
-                variaveis.tipoPagamento = cmbTipoPagamento.Text;
+           
                 variaveis.statusPagamento = cmbStatus.Text;
 
 
@@ -131,10 +130,6 @@ namespace pizzariaLeVelmont
 
         
 
-        private void cmbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            banco.CarregarClienteCombo();
-        }
 
         
     }

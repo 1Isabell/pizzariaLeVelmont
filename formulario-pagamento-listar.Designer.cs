@@ -241,6 +241,7 @@
             this.dgvPagamento.Size = new System.Drawing.Size(1170, 450);
             this.dgvPagamento.TabIndex = 41;
             this.dgvPagamento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagamento_CellClick);
+          
             this.dgvPagamento.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagamento_ColumnHeaderMouseClick);
             // 
             // panel1
