@@ -444,7 +444,7 @@ namespace pizzariaLeVelmont
             
             //FIM PARÁMETROS    
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Pagamento cadastrado com sucesso!", "CADASTRO DO PAGAMENTO");
+            MessageBox.Show("Pagamento cadastrado com sucesso!", "CADASTRO DO PAGAMENTO!");
             conexao.Desconectar();
 
         }
