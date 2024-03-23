@@ -22,7 +22,7 @@ namespace pizzariaLeVelmont
             dgPagamento, //FORMULARIO PAGAMENTO/LISTAR
             dgProduto, //Formulario Produto
             dgEstoque, //Formulario Estoque
-            dgCliente;
+            dgCliente; //Formulario cliente
 
 
 
