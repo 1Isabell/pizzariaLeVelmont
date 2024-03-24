@@ -52,6 +52,8 @@
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.pnlCadastro = new System.Windows.Forms.Panel();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.pnlFuncionario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSair)).BeginInit();
             this.pnlCadastro.SuspendLayout();
@@ -83,7 +85,7 @@
             // 
             this.lblDataNasc.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNasc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblDataNasc.Location = new System.Drawing.Point(435, 165);
+            this.lblDataNasc.Location = new System.Drawing.Point(458, 229);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(144, 32);
             this.lblDataNasc.TabIndex = 42;
@@ -94,7 +96,7 @@
             // 
             this.lblCPF.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblCPF.Location = new System.Drawing.Point(80, 166);
+            this.lblCPF.Location = new System.Drawing.Point(103, 230);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(95, 32);
             this.lblCPF.TabIndex = 44;
@@ -107,7 +109,7 @@
             this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
-            this.txtCPF.Location = new System.Drawing.Point(85, 201);
+            this.txtCPF.Location = new System.Drawing.Point(108, 265);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(272, 31);
             this.txtCPF.TabIndex = 43;
@@ -116,7 +118,7 @@
             // 
             this.lblNivel.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNivel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblNivel.Location = new System.Drawing.Point(556, 264);
+            this.lblNivel.Location = new System.Drawing.Point(582, 315);
             this.lblNivel.Name = "lblNivel";
             this.lblNivel.Size = new System.Drawing.Size(88, 32);
             this.lblNivel.TabIndex = 48;
@@ -127,7 +129,7 @@
             // 
             this.lblStatus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblStatus.Location = new System.Drawing.Point(774, 264);
+            this.lblStatus.Location = new System.Drawing.Point(800, 315);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(88, 32);
             this.lblStatus.TabIndex = 54;
@@ -138,7 +140,7 @@
             // 
             this.lblTelefone.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblTelefone.Location = new System.Drawing.Point(650, 165);
+            this.lblTelefone.Location = new System.Drawing.Point(673, 229);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(137, 32);
             this.lblTelefone.TabIndex = 58;
@@ -149,7 +151,7 @@
             // 
             this.lblTurno.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblTurno.Location = new System.Drawing.Point(81, 264);
+            this.lblTurno.Location = new System.Drawing.Point(107, 315);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(94, 32);
             this.lblTurno.TabIndex = 60;
@@ -187,7 +189,7 @@
             "Básico",
             "Médio",
             "Total"});
-            this.cmbNivel.Location = new System.Drawing.Point(561, 299);
+            this.cmbNivel.Location = new System.Drawing.Point(587, 350);
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(187, 31);
             this.cmbNivel.TabIndex = 66;
@@ -202,7 +204,7 @@
             "Pizzaiolo",
             "Entregador",
             "ADM"});
-            this.cmbFuncao.Location = new System.Drawing.Point(307, 299);
+            this.cmbFuncao.Location = new System.Drawing.Point(333, 350);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(187, 31);
             this.cmbFuncao.TabIndex = 68;
@@ -211,7 +213,7 @@
             // 
             this.lblFuncao.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFuncao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.lblFuncao.Location = new System.Drawing.Point(302, 264);
+            this.lblFuncao.Location = new System.Drawing.Point(328, 315);
             this.lblFuncao.Name = "lblFuncao";
             this.lblFuncao.Size = new System.Drawing.Size(108, 32);
             this.lblFuncao.TabIndex = 69;
@@ -222,7 +224,7 @@
             // 
             this.mtbDataNasc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mtbDataNasc.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbDataNasc.Location = new System.Drawing.Point(440, 201);
+            this.mtbDataNasc.Location = new System.Drawing.Point(463, 265);
             this.mtbDataNasc.Mask = "00/00/0000";
             this.mtbDataNasc.Name = "mtbDataNasc";
             this.mtbDataNasc.Size = new System.Drawing.Size(156, 31);
@@ -238,7 +240,7 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "ATIVO",
             "DESATIVADO"});
-            this.cmbStatus.Location = new System.Drawing.Point(779, 299);
+            this.cmbStatus.Location = new System.Drawing.Point(805, 350);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(173, 31);
             this.cmbStatus.TabIndex = 76;
@@ -247,7 +249,7 @@
             // 
             this.mkbTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mkbTelefone.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mkbTelefone.Location = new System.Drawing.Point(655, 201);
+            this.mkbTelefone.Location = new System.Drawing.Point(678, 265);
             this.mkbTelefone.Mask = " 00000-0000";
             this.mkbTelefone.Name = "mkbTelefone";
             this.mkbTelefone.Size = new System.Drawing.Size(272, 31);
@@ -327,6 +329,8 @@
             // pnlCadastro
             // 
             this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
+            this.pnlCadastro.Controls.Add(this.lblSenha);
+            this.pnlCadastro.Controls.Add(this.txtSenha);
             this.pnlCadastro.Controls.Add(this.lblEmail);
             this.pnlCadastro.Controls.Add(this.lblStatus);
             this.pnlCadastro.Controls.Add(this.cmbTurno);
@@ -359,10 +363,32 @@
             "Noite",
             "Madrugada",
             "Noite/Madrugada"});
-            this.cmbTurno.Location = new System.Drawing.Point(85, 299);
+            this.cmbTurno.Location = new System.Drawing.Point(111, 350);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(187, 31);
             this.cmbTurno.TabIndex = 80;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.lblSenha.Location = new System.Drawing.Point(51, 160);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(157, 32);
+            this.lblSenha.TabIndex = 81;
+            this.lblSenha.Text = "Senha:";
+            this.lblSenha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.Color.White;
+            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(68)))), ((int)(((byte)(89)))));
+            this.txtSenha.Location = new System.Drawing.Point(85, 195);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(865, 31);
+            this.txtSenha.TabIndex = 82;
             // 
             // Funcionario_Cadastrar
             // 
@@ -410,5 +436,7 @@
         private System.Windows.Forms.Panel pnlCadastro;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label lblSenha;
+        private System.Windows.Forms.TextBox txtSenha;
     }
 }

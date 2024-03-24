@@ -16,6 +16,7 @@ namespace pizzariaLeVelmont
         public frmLogin()
         {
             InitializeComponent();
+
         }
 
         int mostrar = 0;
@@ -46,7 +47,9 @@ namespace pizzariaLeVelmont
             }
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        
+
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             //  PEGA OS VALORES DA CAIXA DE EMAIL
             variaveis.usuario = txtEmail.Text;
@@ -63,7 +66,7 @@ namespace pizzariaLeVelmont
                 try
                 {
                     conexao.Conectar();
-                    string selecionar = "SELECT nomeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, turnoFucionario FROM tblfuncionario WHERE emailFuncionario=@email AND senhaFuncionario=@senha AND statusFuncionario=@status";
+                    string selecionar = "SELECT nomeFuncionario, emailFuncionario, senhaFuncionario, acessoFuncionario, turnoFuncionario FROM tblfuncionario WHERE emailFuncionario=@email AND senhaFuncionario=@senha AND statusFuncionario=@status";
                     MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
                     cmd.Parameters.AddWithValue("@email", variaveis.usuario);
                     cmd.Parameters.AddWithValue("@senha", variaveis.senha);
@@ -73,6 +76,7 @@ namespace pizzariaLeVelmont
                     {
                         variaveis.usuario = reader.GetString(0);
                         variaveis.nivel = reader.GetString(3);
+                        variaveis.turno = reader.GetString(4); 
                         new frmMenuPrincipal().Show();
                         Hide();
 
@@ -94,8 +98,11 @@ namespace pizzariaLeVelmont
 
                 }
             }
-
         }
 
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

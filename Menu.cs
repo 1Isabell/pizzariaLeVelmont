@@ -17,7 +17,7 @@ namespace pizzariaLeVelmont
             InitializeComponent();
             lblUser.Text = variaveis.usuario;
             lblData.Text = DateTime.Now.ToString();
-            lblTurno.Text = variaveis.turnoFuncionario;
+            lblTurno.Text = variaveis.turno;
             timer1.Start();
         }
 
@@ -28,15 +28,7 @@ namespace pizzariaLeVelmont
         
 
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -80,6 +72,20 @@ namespace pizzariaLeVelmont
         {
             new Produto_Listar().Show();
             Hide();
+        }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            banco.CarregarQtdeCliente();
+            lblCliente.Text = variaveis.qtdeCliente.ToString();
+
+            banco.CarregarQtdeFuncionario();
+            lblFuncinario.Text = variaveis.qtdeFuncionario.ToString();
+
+            banco.CarregarQtdeProduto();
+            lblProdutos.Text = variaveis.qtdeProduto.ToString();
+
+
         }
     }
 }

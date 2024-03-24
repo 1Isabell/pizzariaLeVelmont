@@ -27,6 +27,90 @@ namespace pizzariaLeVelmont
 
 
 
+        public static void CarregarQtdeCliente()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT SUM(qtdeCliente) FROM vnumclientequantidade;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variaveis.qtdeCliente = reader.GetInt32(0);
+                }
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar a qtde de clientes!\n\n" + erro);
+            }
+
+
+        }
+
+        public static void CarregarQtdeFuncionario()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT SUM(qtdeFuncionario) FROM vnumfuncionarioquantidade;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variaveis.qtdeFuncionario = reader.GetInt32(0);
+                }
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar a qtde de Funcionario!\n\n" + erro);
+            }
+
+
+        }
+
+
+        public static void CarregarQtdeProduto()
+        {
+            try
+            {
+                conexao.Conectar();
+                string selecionar = "SELECT SUM(qtdeProduto) FROM vnumprodutoquantidade;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, conexao.conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variaveis.qtdeProduto = reader.GetInt32(0);
+                }
+                conexao.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao carregar a qtde de Produto!\n\n" + erro);
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //Funcionário
@@ -51,6 +135,7 @@ namespace pizzariaLeVelmont
                 dgFuncionario.Columns[6].HeaderText = "Turno";
                 dgFuncionario.Columns[7].HeaderText = "Funçao";
                 dgFuncionario.Columns[8].HeaderText = "Nível";
+                dgFuncionario.Columns[10].HeaderText = "Senha";
                 dgFuncionario.Columns[9].HeaderText = "Status";
 
 
@@ -85,6 +170,7 @@ namespace pizzariaLeVelmont
                 dgFuncionario.Columns[6].HeaderText = "Turno";
                 dgFuncionario.Columns[7].HeaderText = "Funçao";
                 dgFuncionario.Columns[8].HeaderText = "Nível";
+                dgFuncionario.Columns[10].HeaderText = "Senha";
                 dgFuncionario.Columns[9].HeaderText = "Status";
 
 
@@ -119,6 +205,7 @@ namespace pizzariaLeVelmont
                 dgFuncionario.Columns[6].HeaderText = "Turno";
                 dgFuncionario.Columns[7].HeaderText = "Funçao";
                 dgFuncionario.Columns[8].HeaderText = "Nível";
+                dgFuncionario.Columns[10].HeaderText = "Senha";
                 dgFuncionario.Columns[9].HeaderText = "Status";
 
 
@@ -152,6 +239,7 @@ namespace pizzariaLeVelmont
                 dgFuncionario.Columns[6].HeaderText = "Turno";
                 dgFuncionario.Columns[7].HeaderText = "Funçao";
                 dgFuncionario.Columns[8].HeaderText = "Nível";
+                dgFuncionario.Columns[10].HeaderText = "Senha";
                 dgFuncionario.Columns[9].HeaderText = "Status";
 
 
@@ -203,6 +291,7 @@ namespace pizzariaLeVelmont
                     variaveis.turnoFuncionario = reader.GetString(6);
                     variaveis.funcaoFuncionario = reader.GetString(7);
                     variaveis.nivelFuncionario = reader.GetString(8);
+                    variaveis.senhaFuncionario = reader.GetString(10);
                     variaveis.statusFuncionario = reader.GetString(9);
 
 
@@ -221,7 +310,7 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string inserir = "INSERT INTO tblfuncionario(nomeFuncionario, dataNascFuncionario, cpfFuncionario, telefoneFuncionario, emailFuncionario, turnoFuncionario, funcaoFuncionario, acessoFuncionario, statusFuncionario) VALUES (@nome,@dataNas,@cpf,@telefone,@email,@turno,@funcao,@nivel,@status);";
+                string inserir = "INSERT INTO tblfuncionario(nomeFuncionario, dataNascFuncionario, cpfFuncionario, telefoneFuncionario, emailFuncionario, turnoFuncionario, funcaoFuncionario, acessoFuncionario, statusFuncionario,senhaFuncionario) VALUES (@nome,@dataNas,@cpf,@telefone,@email,@turno,@funcao,@nivel,@status,@senha);";
                 MySqlCommand cmd = new MySqlCommand(inserir, conexao.conn);
                 //parametros
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);
@@ -232,6 +321,7 @@ namespace pizzariaLeVelmont
                 cmd.Parameters.AddWithValue("@turno", variaveis.turnoFuncionario);
                 cmd.Parameters.AddWithValue("@funcao", variaveis.funcaoFuncionario);
                 cmd.Parameters.AddWithValue("@nivel", variaveis.nivelFuncionario);
+                cmd.Parameters.AddWithValue("@senha", variaveis.senhaFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
 
 
@@ -258,7 +348,7 @@ namespace pizzariaLeVelmont
             try
             {
                 conexao.Conectar();
-                string alterar = "UPDATE tblfuncionario SET nomeFuncionario=@nome,dataNascFuncionario=@dataNas,cpfFuncionario=@cpf,turnoFuncionario=@turno,emailFuncionario=@email,funcaoFuncionario=@funcao,acessoFuncionario=@nivel,telefoneFuncionario=@telefone,statusFuncionario=@status WHERE idFuncionario=@codigo;";
+                string alterar = "UPDATE tblfuncionario SET nomeFuncionario=@nome,dataNascFuncionario=@dataNas,cpfFuncionario=@cpf,turnoFuncionario=@turno,emailFuncionario=@email,funcaoFuncionario=@funcao,acessoFuncionario=@nivel,telefoneFuncionario=@telefone,statusFuncionario=@status, senhaFuncionario=@senha WHERE idFuncionario=@codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, conexao.conn);
                 //parametros
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);
@@ -269,6 +359,7 @@ namespace pizzariaLeVelmont
                 cmd.Parameters.AddWithValue("@turno", variaveis.turnoFuncionario);
                 cmd.Parameters.AddWithValue("@funcao", variaveis.funcaoFuncionario);
                 cmd.Parameters.AddWithValue("@nivel", variaveis.nivelFuncionario);
+                cmd.Parameters.AddWithValue("@senha", variaveis.senhaFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codFuncionario);
 

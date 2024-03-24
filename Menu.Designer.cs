@@ -63,6 +63,12 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             this.pnlFuncoMenu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,7 +88,6 @@
             label5.Size = new System.Drawing.Size(479, 256);
             label5.TabIndex = 10;
             label5.Text = "label5";
-            label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pnlFuncoMenu
             // 
@@ -159,7 +164,6 @@
             this.btnAjuda.Size = new System.Drawing.Size(198, 170);
             this.btnAjuda.TabIndex = 21;
             this.btnAjuda.UseVisualStyleBackColor = true;
-            this.btnAjuda.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnCliente
             // 
@@ -289,6 +293,12 @@
             // pnlRelatorioDiario
             // 
             this.pnlRelatorioDiario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
+            this.pnlRelatorioDiario.Controls.Add(this.label8);
+            this.pnlRelatorioDiario.Controls.Add(this.label7);
+            this.pnlRelatorioDiario.Controls.Add(this.label6);
+            this.pnlRelatorioDiario.Controls.Add(this.label4);
+            this.pnlRelatorioDiario.Controls.Add(this.label2);
+            this.pnlRelatorioDiario.Controls.Add(this.label1);
             this.pnlRelatorioDiario.Controls.Add(this.label3);
             this.pnlRelatorioDiario.Controls.Add(this.lblPagamento);
             this.pnlRelatorioDiario.Controls.Add(this.lblFuncinario);
@@ -304,68 +314,62 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F);
             this.label3.Location = new System.Drawing.Point(489, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 60);
             this.label3.TabIndex = 6;
-            this.label3.Text = "E-mail Pedentes";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblPagamento
             // 
             this.lblPagamento.BackColor = System.Drawing.Color.White;
-            this.lblPagamento.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagamento.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F);
             this.lblPagamento.Location = new System.Drawing.Point(376, 133);
             this.lblPagamento.Name = "lblPagamento";
             this.lblPagamento.Size = new System.Drawing.Size(107, 60);
             this.lblPagamento.TabIndex = 5;
-            this.lblPagamento.Text = "Pagamento";
-            this.lblPagamento.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblPagamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblFuncinario
             // 
             this.lblFuncinario.BackColor = System.Drawing.Color.White;
-            this.lblFuncinario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuncinario.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F);
             this.lblFuncinario.Location = new System.Drawing.Point(263, 133);
             this.lblFuncinario.Name = "lblFuncinario";
             this.lblFuncinario.Size = new System.Drawing.Size(107, 60);
             this.lblFuncinario.TabIndex = 4;
-            this.lblFuncinario.Text = "Funcionarios";
-            this.lblFuncinario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblFuncinario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblVendas
             // 
             this.lblVendas.BackColor = System.Drawing.Color.White;
-            this.lblVendas.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendas.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F);
             this.lblVendas.Location = new System.Drawing.Point(489, 17);
             this.lblVendas.Name = "lblVendas";
             this.lblVendas.Size = new System.Drawing.Size(107, 60);
             this.lblVendas.TabIndex = 3;
-            this.lblVendas.Text = "Vendas";
-            this.lblVendas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblVendas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblProdutos
             // 
             this.lblProdutos.BackColor = System.Drawing.Color.White;
-            this.lblProdutos.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProdutos.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F);
             this.lblProdutos.Location = new System.Drawing.Point(376, 17);
             this.lblProdutos.Name = "lblProdutos";
             this.lblProdutos.Size = new System.Drawing.Size(107, 60);
             this.lblProdutos.TabIndex = 2;
-            this.lblProdutos.Text = "Produtos";
-            this.lblProdutos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblProdutos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblCliente
             // 
             this.lblCliente.BackColor = System.Drawing.Color.White;
-            this.lblCliente.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCliente.Location = new System.Drawing.Point(263, 17);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(107, 60);
             this.lblCliente.TabIndex = 1;
-            this.lblCliente.Text = "Cliente";
-            this.lblCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblRelatorioQ
             // 
@@ -447,6 +451,72 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 27);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Cliente";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.label2.Location = new System.Drawing.Point(376, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 27);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Produtos";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.label4.Location = new System.Drawing.Point(489, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 27);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Vendas";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(263, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 29);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Funcionarios";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(376, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 29);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Pagamento";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(489, 133);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 29);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "E-mail";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +528,7 @@
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.pnlFuncoMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -505,5 +576,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

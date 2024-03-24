@@ -28,6 +28,7 @@ namespace pizzariaLeVelmont
                 txtNome.Text = variaveis.nomeFuncionario;
                 txtEmail.Text = variaveis.emailFuncionario;
                 txtCPF.Text = variaveis.cpfFuncionario;
+                txtSenha.Text = variaveis.senhaFuncionario;
                 mtbDataNasc.Text = variaveis.dataNascFuncionario.ToString();
                 mkbTelefone.Text = variaveis.telefoneFuncionario;
                 cmbTurno.Text = variaveis.turnoFuncionario;
@@ -39,6 +40,7 @@ namespace pizzariaLeVelmont
                 txtNome.Enabled = true;
                 txtEmail.Enabled = true;
                 txtCPF.Enabled = true;
+                txtSenha.Enabled = true;
                 mtbDataNasc.Enabled = true;
                 mkbTelefone.Enabled = true;
                 cmbTurno.Enabled = true;
@@ -96,6 +98,14 @@ namespace pizzariaLeVelmont
                 txtCPF.Focus();
                 lblCPF.ForeColor = Color.Red;
             } //CPF
+
+            else if (txtSenha.Text == "")//Não aceita Texto vazio
+            {
+                MessageBox.Show("Favor colocar senha");
+                txtSenha.Clear();
+                txtSenha.Focus();
+                lblSenha.ForeColor = Color.Red;
+            }//Senha
 
 
             else if (mtbDataNasc.MaskCompleted == false)//Não aceita data incompleta
@@ -157,6 +167,7 @@ namespace pizzariaLeVelmont
                 variaveis.nomeFuncionario = txtNome.Text;
                 variaveis.emailFuncionario = txtEmail.Text;
                 variaveis.cpfFuncionario = txtCPF.Text;
+                variaveis.senhaFuncionario = txtSenha.Text;
                 variaveis.dataNascFuncionario = DateTime.Parse(mtbDataNasc.Text);
                 variaveis.telefoneFuncionario = mkbTelefone.Text;
                 variaveis.turnoFuncionario = cmbTurno.Text;

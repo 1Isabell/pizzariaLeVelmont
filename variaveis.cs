@@ -14,14 +14,14 @@ namespace pizzariaLeVelmont
         public static string funcao;
 
         //Login
-        public static string usuario, senha, nivel;
+        public static string usuario, senha, nivel,turno;
 
-
-
+        //Menu
+        public static int qtdeCliente, qtdeProduto, qtdeFuncionario;
 
         //Funcionario - VANZELLI
         public static int codFuncionario;
-        public static string nomeFuncionario, cpfFuncionario, telefoneFuncionario,emailFuncionario, turnoFuncionario, funcaoFuncionario, nivelFuncionario, statusFuncionario;
+        public static string nomeFuncionario, cpfFuncionario,senhaFuncionario, telefoneFuncionario,emailFuncionario, turnoFuncionario, funcaoFuncionario, nivelFuncionario, statusFuncionario;
         public static DateTime dataNascFuncionario;
 
 
