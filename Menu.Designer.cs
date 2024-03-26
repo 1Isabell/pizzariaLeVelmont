@@ -49,6 +49,12 @@
             this.lblRelatorioSemana = new System.Windows.Forms.Label();
             this.lblRelatorioMens = new System.Windows.Forms.Label();
             this.pnlRelatorioDiario = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPagamento = new System.Windows.Forms.Label();
             this.lblFuncinario = new System.Windows.Forms.Label();
@@ -63,12 +69,6 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             this.pnlFuncoMenu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -311,6 +311,72 @@
             this.pnlRelatorioDiario.Size = new System.Drawing.Size(602, 201);
             this.pnlRelatorioDiario.TabIndex = 2;
             // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(489, 133);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 29);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "E-mail";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(376, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 29);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Pagamento";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(263, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 29);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Funcionarios";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.label4.Location = new System.Drawing.Point(489, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 27);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Vendas";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.label2.Location = new System.Drawing.Point(376, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 27);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Produtos";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 27);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Cliente";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
@@ -450,72 +516,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 27);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Cliente";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.label2.Location = new System.Drawing.Point(376, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 27);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Produtos";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
-            this.label4.Location = new System.Drawing.Point(489, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 27);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Vendas";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(263, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 29);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Funcionarios";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(376, 133);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 29);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Pagamento";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(489, 133);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 29);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "E-mail";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // frmMenuPrincipal
             // 

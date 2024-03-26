@@ -85,7 +85,13 @@ namespace pizzariaLeVelmont
             banco.CarregarQtdeProduto();
             lblProdutos.Text = variaveis.qtdeProduto.ToString();
 
-
+            btnRelatorio.Enabled = false;
+            btnPagamento.Enabled = false;
+            btnAjuda.Enabled = false; 
+            btnEmail.Enabled = false;
+            btnVendas.Enabled = false; 
         }
+
+        
     }
 }
