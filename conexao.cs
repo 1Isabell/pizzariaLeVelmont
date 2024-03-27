@@ -12,7 +12,9 @@ namespace pizzariaLeVelmont
     {
 
         //string de conexão com o banco de dados
-        public static string db = "SERVER=localhost;USER=root;DATABASE=dblevelmont";
+        //public static string db = "SERVER=localhost;USER=root;DATABASE=dbpizza";
+        
+        public static string db = "SERVER=195.179.239.0;USER=u283879542_levelmont;PASSWORD=SenacLeVelmont01;DATABASE=u283879542_levelmont;SSL MODE=None";
 
         //reconhecer a biblioteca do Mysql
         public static MySqlConnection conn;
